@@ -32,10 +32,32 @@ print(data.shape) # confimrs there are 150 samples with 5 pieces of informaiton
 print(data.describe())
 
 '''
-#sep_len = data["Sepal Length"]
-#sep_wid = data["Sepal Width"]
-#print(sep_len.head())
-#print(sep_wid.head())
+
+sep_len = data["Sepal Length"]
+#plt.hist(sep_len)
+#plt.show()
+sep_wit = data["Sepal Width"]
+#plt.hist(sep_wit)
+#plt.show()
+pet_len= data["Petal Length"]
+pet_wit = data["Petal Width"]
+
+figure, axs = plt.subplots(2, 2, figsize=(8, 8))
+
+axs[0, 0].set_title("Sepal Length (cm)")
+axs[0, 1].set_title("Sepal Width (cm)")
+axs[1, 0].set_title("Petal Length (cm)")
+axs[1, 1].set_title("Petal Width (cm)")
+
+axs[0, 0].hist(sep_len, bins=9, edgecolor ='black')
+axs[0, 1].hist(sep_wit, bins=9, edgecolor ='black')
+axs[1, 0].hist(pet_len, bins=9, edgecolor ='black')
+axs[1, 1].hist(pet_wit, bins=9, edgecolor ='black')
+plt.show()
+plt.savefig("Histogram of Datapoints")
+
+
+
 
 #create histogram for Sepal length, wideth and petal lenght width. 
 

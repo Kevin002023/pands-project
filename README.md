@@ -34,3 +34,12 @@ Standard deviation between the classes, possible indicate which are the most clo
 
 data.info() provides a technical summary of the data frame. # https://pandas.pydata.org/pandas-docs/stable/getting_started/intro_tutorials/02_read_write.html#min-tut-02-read-write
 This confimrs it is a dataframe, how many rows and columns there are, how many non-null values there are and the 'type' in each column.
+
+
+I created a histogram showing the distribution of values in each metric. When researching the number of bins to use, I came across (Sturge's Rule)[https://www.statology.org/sturges-rule/]
+
+'''
+Optimal Bins = ⌈log2n + 1⌉
+'''
+ 
+As each histogram will be for one data metric, there is 150 datapoints in each histogram. This means the optimal number of bins is 9. 
