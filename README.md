@@ -32,6 +32,10 @@ using this info we should be able to categorise a given organism (providing it i
 
 Standard deviation between the classes, possible indicate which are the most closely related
 
+###uninvariate analysis looks at one variable of a data set. i will do this for each of sepal length, sepal width, petal length and petal width
+- histograms
+- boxplots
+
 data.info() provides a technical summary of the data frame. # https://pandas.pydata.org/pandas-docs/stable/getting_started/intro_tutorials/02_read_write.html#min-tut-02-read-write
 This confimrs it is a dataframe, how many rows and columns there are, how many non-null values there are and the 'type' in each column.
 
@@ -45,3 +49,13 @@ Optimal Bins = ⌈log2n + 1⌉
 As each histogram will be for one data metric, there is 150 datapoints in each histogram. This means the optimal number of bins is 9. 
 
 As there will be multiple graphs, I wanted to save them all to same folder "graphs". I did this by using the relative path within the 'fig.savefig' (command)[https://stackoverflow.com/questions/66583370/matplotlib-plot-image-save-path-python-vs-code]
+
+Boxplots
+https://pythonbasics.org/seaborn-boxplot/
+https://proclusacademy.com/blog/quicktip/boxplot-separate-yaxis/
+
+Making the labels bold = https://www.includehelp.com/python/bold-text-label-in-plot.aspx#:~:text=The%20command%20fontweight%3D'bold,or%20label%20in%20figure%20bold.
+
+
+Multivariage analysis = looks at a number for different variables and ht relationshipt betwween them.
+- scatter pltos

@@ -7,6 +7,7 @@
 import pandas as pd # pandas will be used to manipulate the data
 import numpy as np
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 
 # dataset can be either saved locally or read in directly from the url 
@@ -33,6 +34,9 @@ print(data.describe())
 
 '''
 
+#uninvariate analysis looks at one variable of a data set. i will do this for each 
+#of sepal length, sepal width, petal length and petal width for histogrmas and boxplots
+
 sep_len = data["Sepal Length"]
 #plt.hist(sep_len)
 #plt.show()
@@ -44,16 +48,16 @@ pet_wit = data["Petal Width"]
 
 figure, axs = plt.subplots(2, 2, figsize=(8, 8))
 
-axs[0, 0].set_title("Sepal Length (cm)")
-axs[0, 1].set_title("Sepal Width (cm)")
-axs[1, 0].set_title("Petal Length (cm)")
-axs[1, 1].set_title("Petal Width (cm)")
+axs[0, 0].set_title("Sepal Length (cm)", weight='bold')
+axs[0, 1].set_title("Sepal Width (cm)", weight='bold')
+axs[1, 0].set_title("Petal Length (cm)", weight='bold')
+axs[1, 1].set_title("Petal Width (cm)", weight='bold')
 
 axs[0, 0].hist(sep_len, bins=9, edgecolor ='black')
 axs[0, 1].hist(sep_wit, bins=9, edgecolor ='black')
 axs[1, 0].hist(pet_len, bins=9, edgecolor ='black')
 axs[1, 1].hist(pet_wit, bins=9, edgecolor ='black')
-plt.show()
+#plt.show()
 plt.savefig('graphs/hist_iris.png')
 
 
@@ -69,9 +73,24 @@ plt.savefig('graphs/hist_iris.png')
 
 print(data.groupby('Class').agg([np.mean, np.median])) #np.mean and np.medians are functions wihtin numPy.
 
-box=pd.data(x= 'Class')
-plt.show()
-plt.savefig('graphs/hist_iris.png')
+figure, ax = plt.subplots(2, 2, figsize=(8, 8))
+
+sns.boxplot(x =data['Class'], y= data['Sepal Length'], ax=ax[0,0]);
+ax[0, 0].set_title("Sepal Length (cm)", weight='bold' )
+ax[0, 0].set_xlabel("Class of Iris", weight='bold')
+sns.boxplot(x =data['Class'], y= data['Sepal Width'], ax=ax[0,1]);
+ax[0, 1].set_title("Sepal Width (cm)", weight='bold')
+ax[0, 1].set_xlabel("Class of Iris", weight='bold')
+sns.boxplot(x =data['Class'], y= data['Petal Length'], ax=ax[1,0]);
+ax[1, 0].set_title("Petal Length (cm)", weight='bold')
+ax[1, 0].set_xlabel("Class of Iris", weight='bold')
+sns.boxplot(x =data['Class'], y= data['Petal Width'], ax=ax[1,1]);
+ax[1, 1].set_title("Petal Width (cm)", weight='bold')
+ax[1, 1].set_xlabel("Class of Iris", weight='bold')
+figure.subplots_adjust(hspace=.5)
+figure.suptitle('Boxplots of Sepal and Petal Dimensions by Class', weight='bold')
+#plt.show()
+plt.savefig('graphs/Boxplots.png')
 
 
 '''
