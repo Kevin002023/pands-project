@@ -54,20 +54,26 @@ axs[0, 1].hist(sep_wit, bins=9, edgecolor ='black')
 axs[1, 0].hist(pet_len, bins=9, edgecolor ='black')
 axs[1, 1].hist(pet_wit, bins=9, edgecolor ='black')
 plt.show()
-plt.savefig("Histogram of Datapoints")
+plt.savefig('graphs/hist_iris.png')
 
 
+#uninvariate analysis looks at one variable of a data set. i will do this for each 
+# of sepal length, sepal width, petal length and petal width
 
-
-#create histogram for Sepal length, wideth and petal lenght width. 
 
 #in order select for a subset of data. In this case all setosa classes
 
-setosa = data[data["Class"] == "Iris-setosa"]
-veriscolour = data[data["Class"] == "Iris-versicolor"]
-virginica = data[data["Class"] == "Iris-virginica"]
+#setosa = data[data["Class"] == "Iris-setosa"]
+#veriscolour = data[data["Class"] == "Iris-versicolor"]
+#virginica = data[data["Class"] == "Iris-virginica"]
 
-print(setosa.describe())
+print(data.groupby('Class').agg([np.mean, np.median])) #np.mean and np.medians are functions wihtin numPy.
+
+box=pd.data(x= 'Class')
+plt.show()
+plt.savefig('graphs/hist_iris.png')
+
+
 '''
 pd.options.display.max_rows = 999 # 
 
