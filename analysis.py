@@ -17,22 +17,24 @@ col_headings = ['Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width', 'C
 data= pd.read_csv(data_url, sep=",",  names = col_headings,)
 #data = data.set_index('Sepal Length')
 
-# here is the second method of reading in the data set
-'''
-filename = "iris.data"
-data = pd.read_csv(filename, sep="," names =col_headings) # check format was correct
-'''
+with open('project.txt', 'w') as f:
+    f.write("This is the text file where the outputs of my commands will be recorded \n")
 
-'''
 #Initial look at the dataset
+with open('project.txt', 'a') as f:
+    f.write('The below is the first 5 lines of the dataset\n')
+    f.writelines(str(data.head(5)) + "\n\n")
+    f.write("The below is the last 5 lines of dataset\n'")
+    f.writelines(str(data.tail(5)) + "\n\n")
 
-print(data.head(10))
-print(data.tail(10))
-print(data.info()) # a techincal summary of the dataframe
-print(data.shape) # confimrs there are 150 samples with 5 pieces of informaiton
-print(data.describe())
+with open('project.txt', 'a') as f:  
+    f.write("Below is a technical summary of the dataframe \n\n")
+    f.writelines(str(data.info) + "\n\n")
+    f.write(" The below command confirms there are 150 samples with 5 pieces of infromation like we are expecting. \n")
+    f.writelines(str(data.shape) + "\n\n")
+    f.write("Below is a list of statistics regarding this dataset \n\n")
+    f.writelines(str(data.describe()) + "\n\n")
 
-'''
 
 #uninvariate analysis looks at one variable of a data set. i will do this for each 
 #of sepal length, sepal width, petal length and petal width for histogrmas and boxplots
@@ -58,7 +60,7 @@ axs[0, 1].hist(sep_wit, bins=9, edgecolor ='black')
 axs[1, 0].hist(pet_len, bins=9, edgecolor ='black')
 axs[1, 1].hist(pet_wit, bins=9, edgecolor ='black')
 plt.show()
-#plt.savefig('graphs/hist_iris.png')
+plt.savefig('graphs/hist_iris.png')
 
 
 #uninvariate analysis looks at one variable of a data set. i will do this for each 
@@ -71,7 +73,7 @@ plt.show()
 #veriscolour = data[data["Class"] == "Iris-versicolor"]
 #virginica = data[data["Class"] == "Iris-virginica"]
 
-print(data.groupby('Class').agg([np.mean, np.median])) #np.mean and np.medians are functions wihtin numPy.
+#print(data.groupby('Class').agg([np.mean, np.median])) #np.mean and np.medians are functions wihtin numPy.
 
 figure, ax = plt.subplots(2, 2, figsize=(8, 8))
 

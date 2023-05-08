@@ -1,12 +1,10 @@
-# pands-project
-
 # **Programming and Scripting Project**
 
 ## **Table of Contents**
 
 1. Introduction to Dataset
 2. Project Outline
-
+3. Software Used
 
 
 ## **Introduction to Dataset**
@@ -17,13 +15,53 @@ The 1936 paper was proposing 'Fishers linear discriminant' which today is known 
 
 The dataset is hosted on the (UCI Machine Learning Repository)[https://archive.ics.uci.edu/ml/datasets/iris]. It consists of 3 classes of iris; 
 
-![Iris-setosa](images\Setosa.jpg)
-![Iris-veriscolor](images\Veriscolor.jpg)
-![Iris-virginica](images\Virginica.jpg)
+![Iris-setosa](images\Setosa.jpg "Iris Setosa")
+![Iris-veriscolor](images\Veriscolor.jpg "Iris Veriscolor")
+![Iris-virginica](images\Virginica.jpg "Iris Virginica")
+
+It is a multivariate dataset containing information on 150 specimens of iris. There are 5 attributes recorded for each specimen. (These are as follows:)[https://archive.ics.uci.edu/ml/datasets/iris]
+
+1. sepal length in cm
+2. sepal width in cm
+3. petal length in cm
+4. petal width in cm
+5. class:
+-- Iris Setosa
+-- Iris Versicolour
+-- Iris Virginica
+
+Fischer used this information to identify a method of distinguishing between the classes of iris's. It has since been used as a benchmark dataset for machine learning algorithims.
+
+## **Project Outline**
+
+The purpose of the project was to research the Iris dataset, import it to python and write a program called analysis.py that
 
 
-https://www.angela1c.com/projects/iris/ *
-https://archive.ics.uci.edu/ml/datasets/iris
+## **Software Used**
+
+This project was done using python on Visual Studio Code. It was used to produce both the code and this README.md file.
+
+The dataset is availble from the machine learning repository of UCI(http://archive.ics.uci.edu/ml/datasets/Iris). I chose to import the dataset using the url and the pandas read_csv() function. I did this so the code work even outside my repository, unattached to the dataset. 
+
+The packages I used are as follows:
+
+'''
+import pandas as pd 
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+'''
+
+Pandas allows you to manipulate the dataset as a dataframe. It was used to import the dataset, set up a dataframe, valdidate the valeus and then for aggregation and grouping of specific variables. I made extensive use of the Pandas documentation which can be found (here)[https://pandas.pydata.org/pandas-docs/stable/getting_started/index.html]
+
+NumPy was used for mathematical operations adn when working with arrays/matrices. Its documentation can be found (here)[https://numpy.org/doc/stable/]
+
+Matplotlib is an extension of NumPy and was used to present the data in plots. Its documentation is (here)[https://matplotlib.org/stable/index.html]
+
+Seaborn was also used in the visualistation of the data. It has some extended functionality on Matplotlib when making plots. Seaborn documentation is (here)[https://seaborn.pydata.org/] 
+
+
 
 Classes:
 Iris Setosa
