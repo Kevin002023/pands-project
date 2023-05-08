@@ -1,6 +1,26 @@
 # pands-project
 
-The Fischers Iris data set was put together in 1936 by Ronald Alymer Fisher. it was compuled for his paper "The use of multiple measurements in taxonomic problems" There are five cateogries of data. 4 of them relate to the measurements of the sepal adn petals and the fifth is the class or speices of iris. There are 50 plants of each spieces totalling 150 organisms in total. 
+# **Programming and Scripting Project**
+
+## **Table of Contents**
+
+1. Introduction to Dataset
+2. Project Outline
+
+
+
+## **Introduction to Dataset**
+
+The Fischers Iris dataset was made by famous by statistician Ronald Fischer when he used it in his 1936 paper ("The use of multiple measurements in taxonomic problems")[https://onlinelibrary.wiley.com/doi/10.1111/j.1469-1809.1936.tb02137.x]. However it was actually compiled before this by Edgar Anderson, a botanist who was examining the variation within the Iris flower. 
+
+The 1936 paper was proposing 'Fishers linear discriminant' which today is known as linear discrimanent analysis. This is a (method)[https://www.geeksforgeeks.org/ml-linear-discriminant-analysis/] used in statistics to find a combination of features that can best seperate the data into distinct classes.
+
+The dataset is hosted on the (UCI Machine Learning Repository)[https://archive.ics.uci.edu/ml/datasets/iris]. It consists of 3 classes of iris; 
+
+![Iris-setosa](images\Setosa.jpg)
+![Iris-veriscolor](images\Veriscolor.jpg)
+![Iris-virginica](images\Virginica.jpg)
+
 
 https://www.angela1c.com/projects/iris/ *
 https://archive.ics.uci.edu/ml/datasets/iris
@@ -66,7 +86,7 @@ Multivariage analysis = looks at a number for different variables and the relati
 
 ScatterPlot
 
-I wanted to create a scatterplot of "Sepal Length" vs "Sepal Width", distinguising the classes by colour and then to the same for "Petal Length vs Petal Width"
+I wanted to create a scatterplot of "Sepal Length" vs "Sepal Width", distinguishing the classes by colour and then to the same for "Petal Length vs Petal Width". I founds this (website)[https://datagy.io/pandas-scatter-plot/] a great resourse for this. 
 
 In order to distinguish the Class by colour I created 3 different Dataframes, one for each class, assigned them a unique colour and then plotted them on the same scatterplot graph. 
 
