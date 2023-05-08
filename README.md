@@ -32,12 +32,16 @@ using this info we should be able to categorise a given organism (providing it i
 
 Standard deviation between the classes, possible indicate which are the most closely related
 
+Importing DATA
+I set the index as the 'Class' column by using the parameter (index_col)[https://proclusacademy.com/blog/practical/pandas-guide-for-absolute-beginners/]
+
 ###uninvariate analysis looks at one variable of a data set. i will do this for each of sepal length, sepal width, petal length and petal width
 - histograms
 - boxplots
 
+
 data.info() provides a technical summary of the data frame. # https://pandas.pydata.org/pandas-docs/stable/getting_started/intro_tutorials/02_read_write.html#min-tut-02-read-write
-This confimrs it is a dataframe, how many rows and columns there are, how many non-null values there are and the 'type' in each column.
+This confirms it is a dataframe, how many rows and columns there are, how many non-null values there are and the 'type' in each column.
 
 
 I created a histogram showing the distribution of values in each metric. When researching the number of bins to use, I came across (Sturge's Rule)[https://www.statology.org/sturges-rule/]
@@ -57,5 +61,16 @@ https://proclusacademy.com/blog/quicktip/boxplot-separate-yaxis/
 Making the labels bold = https://www.includehelp.com/python/bold-text-label-in-plot.aspx#:~:text=The%20command%20fontweight%3D'bold,or%20label%20in%20figure%20bold.
 
 
-Multivariage analysis = looks at a number for different variables and ht relationshipt betwween them.
+Multivariage analysis = looks at a number for different variables and the relationshipt betwween them.
 - scatter pltos
+
+ScatterPlot
+
+I wanted to create a scatterplot of "Sepal Length" vs "Sepal Width", distinguising the classes by colour and then to the same for "Petal Length vs Petal Width"
+
+In order to distinguish the Class by colour I created 3 different Dataframes, one for each class, assigned them a unique colour and then plotted them on the same scatterplot graph. 
+
+
+###Results
+
+The 

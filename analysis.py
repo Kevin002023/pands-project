@@ -14,7 +14,7 @@ import seaborn as sns
 
 data_url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
 col_headings = ['Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width', 'Class']
-data= pd.read_csv(data_url, sep=",",  names = col_headings)
+data= pd.read_csv(data_url, sep=",",  names = col_headings,)
 #data = data.set_index('Sepal Length')
 
 # here is the second method of reading in the data set
@@ -57,8 +57,8 @@ axs[0, 0].hist(sep_len, bins=9, edgecolor ='black')
 axs[0, 1].hist(sep_wit, bins=9, edgecolor ='black')
 axs[1, 0].hist(pet_len, bins=9, edgecolor ='black')
 axs[1, 1].hist(pet_wit, bins=9, edgecolor ='black')
-#plt.show()
-plt.savefig('graphs/hist_iris.png')
+plt.show()
+#plt.savefig('graphs/hist_iris.png')
 
 
 #uninvariate analysis looks at one variable of a data set. i will do this for each 
@@ -89,10 +89,34 @@ ax[1, 1].set_title("Petal Width (cm)", weight='bold')
 ax[1, 1].set_xlabel("Class of Iris", weight='bold')
 figure.subplots_adjust(hspace=.5)
 figure.suptitle('Boxplots of Sepal and Petal Dimensions by Class', weight='bold')
+plt.show()
+#plt.savefig('graphs/Boxplots.png')
+
+#sepal_scatter = data[['Sepal Length', 'Sepal Width', 'Class']]
+iris_s = data[data['Class'] == 'Iris-setosa']
+iris_ver = data[data['Class'] == 'Iris-versicolor']
+iris_vir = data[data['Class'] == 'Iris-virginica']
+
+ax = iris_s.plot(x= 'Sepal Length', y ='Sepal Width', kind= 'scatter', c ='yellow', s=30, label= 'Iris-setosa')
+iris_ver.plot(x= 'Sepal Length', y ='Sepal Width', kind= 'scatter', ax= ax, c ='red', s=30, label= 'Iris-versicolor')
+iris_vir.plot(x= 'Sepal Length', y ='Sepal Width', kind= 'scatter', ax= ax, c ='blue', s=30, label= 'Iris-virginica ')
+plt.title('Sepal Length vs Width', weight='bold')
+plt.xlabel('Sepal Length (cm)', weight='bold')
+plt.show()
+#plt.savefig('graphs/Sepal_scatter.png')
+
+ax = iris_s.plot(x= 'Petal Length', y ='Petal Width', kind= 'scatter', c ='yellow', s=30, label= 'Iris-setosa')
+iris_ver.plot(x= 'Petal Length', y ='Petal Width', kind= 'scatter', ax= ax, c ='red', s=30, label= 'Iris-versicolor')
+iris_vir.plot(x= 'Petal Length', y ='Petal Width', kind= 'scatter', ax= ax, c ='blue', s=30, label= 'Iris-virginica ')
+plt.title('Petal Length vs Width', weight='bold')
+plt.xlabel('Petal Length (cm)', weight='bold')
+plt.show()
+#plt.savefig('graphs/Petal_scatter.png')
+
+
+#sns.scatterplot(x='Sepal Length', y='Sepal Width', hue= 'class')
 #plt.show()
-plt.savefig('graphs/Boxplots.png')
-
-
+#ax= data.plot.scatter(x="Sepal Length", y= "Sepal Width", colour =)
 '''
 pd.options.display.max_rows = 999 # 
 
@@ -123,9 +147,6 @@ plt.plot(Class,s_len, color = 'r', marker ='D' )
 plt.show()
 plt.savefig("Sepal Lenght vs Class")
 
-#from sklearn.datasets import load_iris
-#data= load_iris()
 
-#print(df.describe())
 
 '''
