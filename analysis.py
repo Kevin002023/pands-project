@@ -17,10 +17,12 @@ col_headings = ['Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width', 'C
 data= pd.read_csv(data_url, sep=",",  names = col_headings,)
 
 with open('project.txt', 'w') as f:
-    f.write("This is the text file where the outputs of my commands will be recorded \n")
+    f.write("This is the text file where the outputs of my commands will be recorded \n\n")
 
 #Initial look at the dataset
 with open('project.txt', 'a') as f:
+    f.write(" The below command confirms there are 150 samples with 5 pieces of information like we are expecting. \n")
+    f.writelines(str(data.shape) + "\n\n")
     f.write('The below is the first 5 lines of the dataset\n')
     f.writelines(str(data.head(5)) + "\n\n")
     f.write("The below is the last 5 lines of dataset\n'")
@@ -29,8 +31,6 @@ with open('project.txt', 'a') as f:
 with open('project.txt', 'a') as f:  
     f.write("Below is a technical summary of the dataframe \n\n")
     f.writelines(str(data.info) + "\n\n")
-    f.write(" The below command confirms there are 150 samples with 5 pieces of infromation like we are expecting. \n")
-    f.writelines(str(data.shape) + "\n\n")
     f.write("Below is a list of statistics regarding this dataset \n\n")
     f.writelines(str(data.describe()) + "\n\n")
 

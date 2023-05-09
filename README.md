@@ -10,16 +10,18 @@
 
 ## **Introduction to Dataset**
 
-The Fischers Iris dataset was made by famous by statistician Ronald Fischer when he used it in his 1936 paper []"The use of multiple measurements in taxonomic problems"](https://onlinelibrary.wiley.com/doi/10.1111/j.1469-1809.1936.tb02137.x). However it was actually compiled before this by Edgar Anderson, a botanist who was examining the variation within the Iris flower. 
+The Fischers Iris dataset was made by famous by statistician Ronald Fischer when he used it in his 1936 paper ["The use of multiple measurements in taxonomic problems"](https://onlinelibrary.wiley.com/doi/10.1111/j.1469-1809.1936.tb02137.x). However it was actually compiled before this by Edgar Anderson, a botanist who was examining the variation within the Iris flower. 
 
 The 1936 paper was proposing 'Fishers linear discriminant' which today is known as linear discrimanent analysis. This is a [method](https://www.geeksforgeeks.org/ml-linear-discriminant-analysis/) used in statistics to find a combination of features that can best seperate the data into distinct classes.
 
 The dataset is hosted on the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/iris). It consists of 3 classes of iris; 
 
 <img src="https://github.com/Kevin002023/pands-project/blob/main/images/Setosa.jpg" width="250" height="250" title="Iris-setosa">
+** Iris-Setosa
 <img src="https://github.com/Kevin002023/pands-project/blob/main/images/Veriscolor.jpg" width="250" height="250" title="Iris-veriscolor">
-<img src="https://github.com/Kevin002023/pands-project/blob/main/images/Virginica.jpg" width="250" height="250" alt="Iris-virginica">
-
+** Iris-veriscolor
+<img src="https://github.com/Kevin002023/pands-project/blob/main/images/Virginica.jpg" width="250" height="250" title="Iris-virginica">
+** Iris-virginica
 It is a multivariate dataset containing information on 150 specimens of iris. There are 5 attributes recorded for each specimen. [These are as follows:](https://archive.ics.uci.edu/ml/datasets/iris)
 
 1. sepal length in cm
@@ -60,18 +62,18 @@ import seaborn as sns
 
 ````
 
-Pandas allows you to manipulate the dataset as a dataframe. It was used to import the dataset, set up a dataframe, valdidate the valeus and then for aggregation and grouping of specific variables. I made extensive use of the Pandas documentation which can be found (here)[https://pandas.pydata.org/pandas-docs/stable/getting_started/index.html]
+Pandas allows you to manipulate the dataset as a dataframe. It was used to import the dataset, set up a dataframe, valdidate the valeus and then for aggregation and grouping of specific variables. I made extensive use of the Pandas documentation which can be found [here](https://pandas.pydata.org/pandas-docs/stable/getting_started/index.html)
 
-NumPy was used for mathematical operations adn when working with arrays/matrices. Its documentation can be found (here)[https://numpy.org/doc/stable/]
+NumPy was used for mathematical operations adn when working with arrays/matrices. Its documentation can be found [here](https://numpy.org/doc/stable/)
 
-Matplotlib is an extension of NumPy and was used to present the data in plots. Its documentation is (here)[https://matplotlib.org/stable/index.html]
+Matplotlib is an extension of NumPy and was used to present the data in plots. Its documentation is [here](https://matplotlib.org/stable/index.html)
 
-Seaborn was also used in the visualistation of the data. It has some extended functionality on Matplotlib when making plots. Seaborn documentation is (here)[https://seaborn.pydata.org/] 
+Seaborn was also used in the visualistation of the data. It has some extended functionality on Matplotlib when making plots. Seaborn documentation is [here](https://seaborn.pydata.org/)
 
 
 ## **Project**
 
-I chose to import the dataset using the url and the pandas read_csv() function. I did this so the code work even outside my repository, unattached to the dataset. 
+I chose to import the dataset using the url and the pandas read_csv() function. I did this so the code would work even with the dataset unattached to the repository. The dataset is called 'data' in my code hereafter. 
 
 ````
 data_url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
@@ -79,6 +81,38 @@ col_headings = ['Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width', 'C
 data= pd.read_csv(data_url, sep=",",  names = col_headings,)
 
 ````
+The next step was to look at the data and run some checks to make sure it looks as expected. However as I wanted all commands to be outputted to my textfile ['project.txt'](https://github.com/Kevin002023/pands-project/blob/main/project.txt), I first created it, using the methods [here](https://www.geeksforgeeks.org/reading-writing-text-files-python/). 
+
+``
+with open('project.txt', 'w') as f:
+    f.write("This is the text file where the outputs of my commands will be recorded \n")
+``
+I first wanted to ensure the dataset was as expected. I used the function data.shape, which presented the below
+
+``
+The below command confirms there are 150 samples with 5 pieces of information like we are expecting. 
+(150, 5)
+``
+This is as expected. As stated in the summary, there are 150 samples with 5 variables.  Next I wanted to view the actual data to ensure it was presenting correctly. I used the functions head(), tail() in order to view the first and last 5 rows of the dataset.  This appeared as below;
+
+``
+The below is the first 5 lines of the dataset
+   Sepal Length  Sepal Width  Petal Length  Petal Width        Class
+0           5.1          3.5           1.4          0.2  Iris-setosa
+1           4.9          3.0           1.4          0.2  Iris-setosa
+2           4.7          3.2           1.3          0.2  Iris-setosa
+3           4.6          3.1           1.5          0.2  Iris-setosa
+4           5.0          3.6           1.4          0.2  Iris-setosa
+
+The below is the last 5 lines of dataset
+'     Sepal Length  Sepal Width  Petal Length  Petal Width           Class
+145           6.7          3.0           5.2          2.3  Iris-virginica
+146           6.3          2.5           5.0          1.9  Iris-virginica
+147           6.5          3.0           5.2          2.0  Iris-virginica
+148           6.2          3.4           5.4          2.3  Iris-virginica
+149           5.9          3.0           5.1          1.8  Iris-virginica
+``
+
 
 
 
@@ -100,9 +134,9 @@ This confirms it is a dataframe, how many rows and columns there are, how many n
 
 I created a histogram showing the distribution of values in each metric. When researching the number of bins to use, I came across (Sturge's Rule)[https://www.statology.org/sturges-rule/]
 
-'''
+``
 Optimal Bins = ⌈log2n + 1⌉
-'''
+``
  
 As each histogram will be for one data metric, there is 150 datapoints in each histogram. This means the optimal number of bins is 9. 
 
