@@ -23,15 +23,15 @@ with open('project.txt', 'w') as f:
 with open('project.txt', 'a') as f:
     f.write(" The below command confirms there are 150 samples with 5 pieces of information like we are expecting. \n")
     f.writelines(str(data.shape) + "\n\n")
-    f.write('The below is the first 5 lines of the dataset\n')
+    f.write('The below is the first 5 lines of the dataset:\n')
     f.writelines(str(data.head(5)) + "\n\n")
-    f.write("The below is the last 5 lines of dataset\n'")
+    f.write("The below is the last 5 lines of dataset:\n'")
     f.writelines(str(data.tail(5)) + "\n\n")
 
 with open('project.txt', 'a') as f:  
-    f.write("Below is a technical summary of the dataframe \n\n")
+    f.write("Below is a technical summary of the dataframe: \n\n")
     f.writelines(str(data.info) + "\n\n")
-    f.write("Below is a list of statistics regarding this dataset \n\n")
+    f.write("Below is a list of statistics regarding this dataset: \n\n")
     f.writelines(str(data.describe()) + "\n\n")
 
 

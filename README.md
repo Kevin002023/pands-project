@@ -17,12 +17,14 @@ The 1936 paper was proposing 'Fishers linear discriminant' which today is known 
 The dataset is hosted on the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/iris). It consists of 3 classes of iris; 
 
 <img src="https://github.com/Kevin002023/pands-project/blob/main/images/Setosa.jpg" width="250" height="250" title="Iris-setosa">
-** Iris-Setosa
+#Iris-Setosa
 <img src="https://github.com/Kevin002023/pands-project/blob/main/images/Veriscolor.jpg" width="250" height="250" title="Iris-veriscolor">
-** Iris-veriscolor
+#Iris-veriscolor
 <img src="https://github.com/Kevin002023/pands-project/blob/main/images/Virginica.jpg" width="250" height="250" title="Iris-virginica">
-** Iris-virginica
-It is a multivariate dataset containing information on 150 specimens of iris. There are 5 attributes recorded for each specimen. [These are as follows:](https://archive.ics.uci.edu/ml/datasets/iris)
+#Iris-virginica
+
+
+It is a multivariate dataset containing information on 150 specimens of iris. There are 5 attributes recorded for each specimen. [These are as follows](https://archive.ics.uci.edu/ml/datasets/iris) :
 
 1. sepal length in cm
 2. sepal width in cm
@@ -87,15 +89,17 @@ The next step was to look at the data and run some checks to make sure it looks 
 with open('project.txt', 'w') as f:
     f.write("This is the text file where the outputs of my commands will be recorded \n")
 ``
+
 I first wanted to ensure the dataset was as expected. I used the function data.shape, which presented the below
 
 ``
 The below command confirms there are 150 samples with 5 pieces of information like we are expecting. 
 (150, 5)
 ``
+
 This is as expected. As stated in the summary, there are 150 samples with 5 variables.  Next I wanted to view the actual data to ensure it was presenting correctly. I used the functions head(), tail() in order to view the first and last 5 rows of the dataset.  This appeared as below;
 
-``
+````
 The below is the first 5 lines of the dataset
    Sepal Length  Sepal Width  Petal Length  Petal Width        Class
 0           5.1          3.5           1.4          0.2  Iris-setosa
@@ -103,7 +107,9 @@ The below is the first 5 lines of the dataset
 2           4.7          3.2           1.3          0.2  Iris-setosa
 3           4.6          3.1           1.5          0.2  Iris-setosa
 4           5.0          3.6           1.4          0.2  Iris-setosa
+````
 
+````
 The below is the last 5 lines of dataset
 '     Sepal Length  Sepal Width  Petal Length  Petal Width           Class
 145           6.7          3.0           5.2          2.3  Iris-virginica
@@ -111,17 +117,13 @@ The below is the last 5 lines of dataset
 147           6.5          3.0           5.2          2.0  Iris-virginica
 148           6.2          3.4           5.4          2.3  Iris-virginica
 149           5.9          3.0           5.1          1.8  Iris-virginica
-``
+````
 
 
 
 
 
 
-Standard deviation between the classes, possible indicate which are the most closely related
-
-Importing DATA
-I set the index as the 'Class' column by using the parameter (index_col)[https://proclusacademy.com/blog/practical/pandas-guide-for-absolute-beginners/]
 
 ###uninvariate analysis looks at one variable of a data set. i will do this for each of sepal length, sepal width, petal length and petal width
 - histograms
