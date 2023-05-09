@@ -5,21 +5,22 @@
 1. Introduction to Dataset
 2. Project Outline
 3. Software Used
+4. Project
 
 
 ## **Introduction to Dataset**
 
-The Fischers Iris dataset was made by famous by statistician Ronald Fischer when he used it in his 1936 paper ("The use of multiple measurements in taxonomic problems")[https://onlinelibrary.wiley.com/doi/10.1111/j.1469-1809.1936.tb02137.x]. However it was actually compiled before this by Edgar Anderson, a botanist who was examining the variation within the Iris flower. 
+The Fischers Iris dataset was made by famous by statistician Ronald Fischer when he used it in his 1936 paper []"The use of multiple measurements in taxonomic problems"](https://onlinelibrary.wiley.com/doi/10.1111/j.1469-1809.1936.tb02137.x). However it was actually compiled before this by Edgar Anderson, a botanist who was examining the variation within the Iris flower. 
 
-The 1936 paper was proposing 'Fishers linear discriminant' which today is known as linear discrimanent analysis. This is a (method)[https://www.geeksforgeeks.org/ml-linear-discriminant-analysis/] used in statistics to find a combination of features that can best seperate the data into distinct classes.
+The 1936 paper was proposing 'Fishers linear discriminant' which today is known as linear discrimanent analysis. This is a [method](https://www.geeksforgeeks.org/ml-linear-discriminant-analysis/) used in statistics to find a combination of features that can best seperate the data into distinct classes.
 
-The dataset is hosted on the (UCI Machine Learning Repository)[https://archive.ics.uci.edu/ml/datasets/iris]. It consists of 3 classes of iris; 
+The dataset is hosted on the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/iris). It consists of 3 classes of iris; 
 
-![Iris-setosa](images\Setosa.jpg "Iris Setosa")
-![Iris-veriscolor](images\Veriscolor.jpg "Iris Veriscolor")
-![Iris-virginica](images\Virginica.jpg "Iris Virginica")
+![Iris-setosa](https://github.com/Kevin002023/pands-project/blob/main/images/Setosa.jpg "Iris Setosa")
+![Iris-veriscolor](https://github.com/Kevin002023/pands-project/blob/main/images/Veriscolor.jpg "Iris Veriscolor")
+![Iris-virginica](https://github.com/Kevin002023/pands-project/blob/main/images/Virginica.jpg "Iris Virginica")
 
-It is a multivariate dataset containing information on 150 specimens of iris. There are 5 attributes recorded for each specimen. (These are as follows:)[https://archive.ics.uci.edu/ml/datasets/iris]
+It is a multivariate dataset containing information on 150 specimens of iris. There are 5 attributes recorded for each specimen. [These are as follows:](https://archive.ics.uci.edu/ml/datasets/iris)
 
 1. sepal length in cm
 2. sepal width in cm
@@ -34,24 +35,30 @@ Fischer used this information to identify a method of distinguishing between the
 
 ## **Project Outline**
 
-The purpose of the project was to research the Iris dataset, import it to python and write a program called analysis.py that
+The purpose of the project was to research the Iris dataset, import it to python and write a program called 'analysis.py' that would be used to analyse the dataset. We were to produce plots of this analysis and output the results fo any commands to a text file called 'project.txt'.
+
+The purpose of the analysis done by Fisher on this dataset was to see if he could distinguish the class of iris based on the metrics it contains or a combination thereof.  I would like to try and replicate this. 
+
+In order to acheive this, a univariate analysis was carried out, where a singular variable was looked at. This was done by producing plots to show the ditribution and variance for Sepal and petal lenghts and widths.
+
+After this a multivariate analysis was performed, where the relationship between certain variables was looked at.
 
 
 ## **Software Used**
 
 This project was done using python on Visual Studio Code. It was used to produce both the code and this README.md file.
 
-The dataset is availble from the machine learning repository of UCI(http://archive.ics.uci.edu/ml/datasets/Iris). I chose to import the dataset using the url and the pandas read_csv() function. I did this so the code work even outside my repository, unattached to the dataset. 
+The dataset is availble from the machine learning repository of UCI(http://archive.ics.uci.edu/ml/datasets/Iris). 
 
 The packages I used are as follows:
 
-'''
+````
 import pandas as pd 
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-'''
+````
 
 Pandas allows you to manipulate the dataset as a dataframe. It was used to import the dataset, set up a dataframe, valdidate the valeus and then for aggregation and grouping of specific variables. I made extensive use of the Pandas documentation which can be found (here)[https://pandas.pydata.org/pandas-docs/stable/getting_started/index.html]
 
@@ -62,31 +69,20 @@ Matplotlib is an extension of NumPy and was used to present the data in plots. I
 Seaborn was also used in the visualistation of the data. It has some extended functionality on Matplotlib when making plots. Seaborn documentation is (here)[https://seaborn.pydata.org/] 
 
 
+## **Project**
 
-Classes:
-Iris Setosa
-Iris Versicolour
-irisVirginica
+I chose to import the dataset using the url and the pandas read_csv() function. I did this so the code work even outside my repository, unattached to the dataset. 
 
-Ideas for analysis. 
+````
+data_url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
+col_headings = ['Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width', 'Class']
+data= pd.read_csv(data_url, sep=",",  names = col_headings,)
 
-Ranges of sepal size for all irises
-ranges of petal size for all irises
-average of sepal siz for all irises
-average of petal size for all irises
-ratio of sepal size to petal size for all irises
+````
 
 
-Ranges of sepal size for each class of irises
-ranges of petal size for each class of irises
-average of sepal siz for each class of irises
-average of petal size for each class of irises
 
-% occurance of each class # irrelevant as there is 50 of each
 
-Graphs showing 3 classes sepal size and petal size
-
-using this info we should be able to categorise a given organism (providing it is one of the 3 classes)
 
 Standard deviation between the classes, possible indicate which are the most closely related
 

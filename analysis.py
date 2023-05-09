@@ -15,7 +15,6 @@ import seaborn as sns
 data_url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
 col_headings = ['Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width', 'Class']
 data= pd.read_csv(data_url, sep=",",  names = col_headings,)
-#data = data.set_index('Sepal Length')
 
 with open('project.txt', 'w') as f:
     f.write("This is the text file where the outputs of my commands will be recorded \n")
