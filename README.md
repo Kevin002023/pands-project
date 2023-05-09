@@ -16,9 +16,9 @@ The 1936 paper was proposing 'Fishers linear discriminant' which today is known 
 
 The dataset is hosted on the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/iris). It consists of 3 classes of iris; 
 
-<img src="https://github.com/Kevin002023/pands-project/blob/main/images/Setosa.jpg" width="100" height="100">
-![Iris-veriscolor](https://github.com/Kevin002023/pands-project/blob/main/images/Veriscolor.jpg "Iris Veriscolor")
-![Iris-virginica](https://github.com/Kevin002023/pands-project/blob/main/images/Virginica.jpg "Iris Virginica")
+<img src="https://github.com/Kevin002023/pands-project/blob/main/images/Setosa.jpg" width="250" height="250" title="Iris-setosa">
+<img src="https://github.com/Kevin002023/pands-project/blob/main/images/Veriscolor.jpg" width="250" height="250" title="Iris-veriscolor">
+<img src="https://github.com/Kevin002023/pands-project/blob/main/images/Virginica.jpg" width="250" height="250" title="Iris-virginica">
 
 It is a multivariate dataset containing information on 150 specimens of iris. There are 5 attributes recorded for each specimen. [These are as follows:](https://archive.ics.uci.edu/ml/datasets/iris)
 
