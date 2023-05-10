@@ -5,7 +5,7 @@
 1. Introduction to Dataset
 2. Project Outline
 3. Software Used
-4. Project
+4. Analysis
 
 
 ## **Introduction to Dataset**
@@ -17,11 +17,11 @@ The 1936 paper was proposing 'Fishers linear discriminant' which today is known 
 The dataset is hosted on the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/iris). It consists of 3 classes of iris; 
 
 <img src="https://github.com/Kevin002023/pands-project/blob/main/images/Setosa.jpg" width="250" height="250" title="Iris-setosa">
-#Iris-Setosa
+-Iris-Setosa
 <img src="https://github.com/Kevin002023/pands-project/blob/main/images/Veriscolor.jpg" width="250" height="250" title="Iris-veriscolor">
-#Iris-veriscolor
+-Iris-veriscolor
 <img src="https://github.com/Kevin002023/pands-project/blob/main/images/Virginica.jpg" width="250" height="250" title="Iris-virginica">
-#Iris-virginica
+-Iris-virginica
 
 
 It is a multivariate dataset containing information on 150 specimens of iris. There are 5 attributes recorded for each specimen. [These are as follows](https://archive.ics.uci.edu/ml/datasets/iris) :
@@ -31,9 +31,9 @@ It is a multivariate dataset containing information on 150 specimens of iris. Th
 3. petal length in cm
 4. petal width in cm
 5. class:
--- Iris Setosa
--- Iris Versicolour
--- Iris Virginica
+- Iris Setosa
+- Iris Versicolour
+- Iris Virginica
 
 Fischer used this information to identify a method of distinguishing between the classes of iris's. It has since been used as a benchmark dataset for machine learning algorithims.
 
@@ -43,7 +43,7 @@ The purpose of the project was to research the Iris dataset, import it to python
 
 The purpose of the analysis done by Fisher on this dataset was to see if he could distinguish the class of iris based on the metrics it contains or a combination thereof.  I would like to try and replicate this. 
 
-In order to acheive this, a univariate analysis was carried out, where a singular variable was looked at. This was done by producing plots to show the ditribution and variance for Sepal and petal lenghts and widths.
+In order to acheive this, a univariate analysis was carried out, where a singular variable was looked at. This was done by producing plots to show the ditribution and variance for Sepal and petal lenghts and widths. The [Pandas documnetation](https://pandas.pydata.org/pandas-docs/version/0.13.1/visualization.html#targeting-different-subplots) was a great source of information on generating plots.
 
 After this a multivariate analysis was performed, where the relationship between certain variables was looked at.
 
@@ -73,7 +73,7 @@ Matplotlib is an extension of NumPy and was used to present the data in plots. I
 Seaborn was also used in the visualistation of the data. It has some extended functionality on Matplotlib when making plots. Seaborn documentation is [here](https://seaborn.pydata.org/)
 
 
-## **Project**
+## **Analysis**
 
 I chose to import the dataset using the url and the pandas read_csv() function. I did this so the code would work even with the dataset unattached to the repository. The dataset is called 'data' in my code hereafter. 
 
@@ -119,10 +119,56 @@ The below is the last 5 lines of dataset
 149           5.9          3.0           5.1          1.8  Iris-virginica
 ````
 
+The dataset is presenting as expected. The next step was to get some preliminary statistics regarding each variable. The Pandas function describe() does this for us. 
+
+````
+Below is a list of statistics regarding this dataset 
+
+       Sepal Length  Sepal Width  Petal Length  Petal Width
+count    150.000000   150.000000    150.000000   150.000000
+mean       5.843333     3.054000      3.758667     1.198667
+std        0.828066     0.433594      1.764420     0.763161
+min        4.300000     2.000000      1.000000     0.100000
+25%        5.100000     2.800000      1.600000     0.300000
+50%        5.800000     3.000000      4.350000     1.300000
+75%        6.400000     3.300000      5.100000     1.800000
+max        7.900000     4.400000      6.900000     2.500000
+
+````
+
+The above commands were all added to 'project.txt' using the write() command. However this command expects any input to be a string, wheras the head(), tail(), info() and describe() funcitons all generate dataframes. To counteract this they were converted to strings in the write command.  
 
 
+##Univariate Analysis
+
+Univariate Analysis where only one variable is looked at, at a time. This was done for Sepal Length, Sepal Width, Petal Length and Petal Width.
+
+#Histogram
+
+A Histogram is a visual representation of the distribution of values. The range of values are grouped into a series of intervals called 'bins' and the frequency of each value inside these bins is then plotted on the graph. The number of bins can greatly impact the effectiveness of the histogram. If we have too few, there will be a lack of detail making it difficult to identify any pattern, too many and the distribution will look rough and there will be too much "noise". ["Sturges Rule"](https://www.statology.org/sturges-rule/) is a method of identifying the optimal number of bins to use. 
+
+``
+Optimal Bins = ⌈log2n + 1⌉
+``
+ 
+As each histogram will be for one data metric, there is 150 datapoints in each histogram. This means the optimal number of bins is 9. 
 
 
+In this case each variable was plotted on its own seperate histogram. To do this a series was created for each variable and then used to create a plot. 
+
+By creating an array called ``axs``, each variable could have its own subplot on the one image. 
+
+![Iris histogram](https://github.com/Kevin002023/pands-project/blob/main/images/hist_iris.png)
+
+A ['normal distribution'](https://www.techtarget.com/whatis/definition/normal-distribution#:~:text=What%20is%20normal%20distribution%3F,the%20mean%20of%20the%20distribution.) of values will have a bell curve. 
+
+-Sepal length: Has a unimodal distribution (ie, a singular peak). while it isnt strictly symmetrical, it can be considered normal distribution wiht a slight skew to the right.
+
+-Sepal Width: This also has a unimodal distribution and the classical bell shape you would expect from a normal distribution.
+
+-Petal Length: This has a bimodal (two peaks) distribution and skews towards the right.
+
+-Petal Width: Again this has a bimodal distribution and skews to the right. 
 
 
 ###uninvariate analysis looks at one variable of a data set. i will do this for each of sepal length, sepal width, petal length and petal width
@@ -130,17 +176,6 @@ The below is the last 5 lines of dataset
 - boxplots
 
 
-data.info() provides a technical summary of the data frame. # https://pandas.pydata.org/pandas-docs/stable/getting_started/intro_tutorials/02_read_write.html#min-tut-02-read-write
-This confirms it is a dataframe, how many rows and columns there are, how many non-null values there are and the 'type' in each column.
-
-
-I created a histogram showing the distribution of values in each metric. When researching the number of bins to use, I came across (Sturge's Rule)[https://www.statology.org/sturges-rule/]
-
-``
-Optimal Bins = ⌈log2n + 1⌉
-``
- 
-As each histogram will be for one data metric, there is 150 datapoints in each histogram. This means the optimal number of bins is 9. 
 
 As there will be multiple graphs, I wanted to save them all to same folder "graphs". I did this by using the relative path within the 'fig.savefig' (command)[https://stackoverflow.com/questions/66583370/matplotlib-plot-image-save-path-python-vs-code]
 

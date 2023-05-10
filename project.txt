@@ -1,9 +1,9 @@
 This is the text file where the outputs of my commands will be recorded 
 
- The below command confirms there are 150 samples with 5 pieces of infromation like we are expecting. 
+ The below command confirms there are 150 samples with 5 pieces of information like we are expecting. 
 (150, 5)
 
-The below is the first 5 lines of the dataset
+The below is the first 5 lines of the dataset:
    Sepal Length  Sepal Width  Petal Length  Petal Width        Class
 0           5.1          3.5           1.4          0.2  Iris-setosa
 1           4.9          3.0           1.4          0.2  Iris-setosa
@@ -11,7 +11,7 @@ The below is the first 5 lines of the dataset
 3           4.6          3.1           1.5          0.2  Iris-setosa
 4           5.0          3.6           1.4          0.2  Iris-setosa
 
-The below is the last 5 lines of dataset
+The below is the last 5 lines of dataset:
 '     Sepal Length  Sepal Width  Petal Length  Petal Width           Class
 145           6.7          3.0           5.2          2.3  Iris-virginica
 146           6.3          2.5           5.0          1.9  Iris-virginica
@@ -19,7 +19,7 @@ The below is the last 5 lines of dataset
 148           6.2          3.4           5.4          2.3  Iris-virginica
 149           5.9          3.0           5.1          1.8  Iris-virginica
 
-Below is a technical summary of the dataframe 
+Below is a technical summary of the dataframe: 
 
 <bound method DataFrame.info of      Sepal Length  Sepal Width  Petal Length  Petal Width           Class
 0             5.1          3.5           1.4          0.2     Iris-setosa
@@ -36,7 +36,7 @@ Below is a technical summary of the dataframe
 
 [150 rows x 5 columns]>
 
-Below is a list of statistics regarding this dataset 
+Below is a list of statistics regarding this dataset: 
 
        Sepal Length  Sepal Width  Petal Length  Petal Width
 count    150.000000   150.000000    150.000000   150.000000

@@ -10,13 +10,11 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 
-# dataset can be either saved locally or read in directly from the url 
-
 data_url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
 col_headings = ['Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width', 'Class']
 data= pd.read_csv(data_url, sep=",",  names = col_headings,)
 
-with open('project.txt', 'w') as f:
+with open('project.txt', 'w') as f: #creating the text file for outputs
     f.write("This is the text file where the outputs of my commands will be recorded \n\n")
 
 #Initial look at the dataset
@@ -31,19 +29,14 @@ with open('project.txt', 'a') as f:
 with open('project.txt', 'a') as f:  
     f.write("Below is a technical summary of the dataframe: \n\n")
     f.writelines(str(data.info) + "\n\n")
-    f.write("Below is a list of statistics regarding this dataset: \n\n")
+    f.write("Below is a statistical summary of each variable: \n\n")
     f.writelines(str(data.describe()) + "\n\n")
 
 
-#uninvariate analysis looks at one variable of a data set. i will do this for each 
-#of sepal length, sepal width, petal length and petal width for histogrmas and boxplots
+#uninvariate analysis looks at one variable of a data set. i will do this for each of sepal length, sepal width, petal length and petal width for histogrmas and boxplots
 
 sep_len = data["Sepal Length"]
-#plt.hist(sep_len)
-#plt.show()
 sep_wit = data["Sepal Width"]
-#plt.hist(sep_wit)
-#plt.show()
 pet_len= data["Petal Length"]
 pet_wit = data["Petal Width"]
 
@@ -68,9 +61,13 @@ plt.savefig('graphs/hist_iris.png')
 
 #in order select for a subset of data. In this case all setosa classes
 
-#setosa = data[data["Class"] == "Iris-setosa"]
-#veriscolour = data[data["Class"] == "Iris-versicolor"]
-#virginica = data[data["Class"] == "Iris-virginica"]
+setosa = data[data["Class"] == "Iris-setosa"]
+s_s_l = setosa["Sepal Length"] #Setosa Sepal Lenght
+s_s_w = setosa["Sepal Length"] #Setosa Sepal width
+s_p_l = setosa["Petal Length]"]
+
+veriscolour = data[data["Class"] == "Iris-versicolor"]
+virginica = data[data["Class"] == "Iris-virginica"]
 
 #print(data.groupby('Class').agg([np.mean, np.median])) #np.mean and np.medians are functions wihtin numPy.
 
@@ -91,7 +88,7 @@ ax[1, 1].set_xlabel("Class of Iris", weight='bold')
 figure.subplots_adjust(hspace=.5)
 figure.suptitle('Boxplots of Sepal and Petal Dimensions by Class', weight='bold')
 plt.show()
-#plt.savefig('graphs/Boxplots.png')
+plt.savefig('graphs/Boxplots.png')
 
 #sepal_scatter = data[['Sepal Length', 'Sepal Width', 'Class']]
 iris_s = data[data['Class'] == 'Iris-setosa']
@@ -104,7 +101,7 @@ iris_vir.plot(x= 'Sepal Length', y ='Sepal Width', kind= 'scatter', ax= ax, c ='
 plt.title('Sepal Length vs Width', weight='bold')
 plt.xlabel('Sepal Length (cm)', weight='bold')
 plt.show()
-#plt.savefig('graphs/Sepal_scatter.png')
+plt.savefig('graphs/Sepal_scatter.png')
 
 ax = iris_s.plot(x= 'Petal Length', y ='Petal Width', kind= 'scatter', c ='yellow', s=30, label= 'Iris-setosa')
 iris_ver.plot(x= 'Petal Length', y ='Petal Width', kind= 'scatter', ax= ax, c ='red', s=30, label= 'Iris-versicolor')
@@ -112,7 +109,7 @@ iris_vir.plot(x= 'Petal Length', y ='Petal Width', kind= 'scatter', ax= ax, c ='
 plt.title('Petal Length vs Width', weight='bold')
 plt.xlabel('Petal Length (cm)', weight='bold')
 plt.show()
-#plt.savefig('graphs/Petal_scatter.png')
+plt.savefig('graphs/Petal_scatter.png')
 
 
 #sns.scatterplot(x='Sepal Length', y='Sepal Width', hue= 'class')
