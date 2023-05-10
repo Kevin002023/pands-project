@@ -33,7 +33,8 @@ with open('project.txt', 'a') as f:
     f.writelines(str(data.describe()) + "\n\n")
 
 
-#uninvariate analysis looks at one variable of a data set. i will do this for each of sepal length, sepal width, petal length and petal width for histogrmas and boxplots
+#univariate analysis 
+#Histograms
 
 sep_len = data["Sepal Length"]
 sep_wit = data["Sepal Width"]
@@ -51,65 +52,124 @@ axs[0, 0].hist(sep_len, bins=9, edgecolor ='black')
 axs[0, 1].hist(sep_wit, bins=9, edgecolor ='black')
 axs[1, 0].hist(pet_len, bins=9, edgecolor ='black')
 axs[1, 1].hist(pet_wit, bins=9, edgecolor ='black')
+figure.suptitle('Multiclass Histogram', weight='bold')
 plt.show()
-plt.savefig('graphs/hist_iris.png')
+plt.savefig('images/hist_iris.png')
 
+#histograms that have been seperated by class
 
-#uninvariate analysis looks at one variable of a data set. i will do this for each 
-# of sepal length, sepal width, petal length and petal width
-
-
-#in order select for a subset of data. In this case all setosa classes
-
+#Setosa Histogram
 setosa = data[data["Class"] == "Iris-setosa"]
-s_s_l = setosa["Sepal Length"] #Setosa Sepal Lenght
-s_s_w = setosa["Sepal Length"] #Setosa Sepal width
-s_p_l = setosa["Petal Length]"]
+set_sl = setosa["Sepal Length"] #Setosa Sepal Lenght
+set_sw = setosa["Sepal Width"] #Setosa Sepal width
+set_pl = setosa["Petal Length"] #Petal Length
+set_pw = setosa["Petal Width"] # Petal Width
 
-veriscolour = data[data["Class"] == "Iris-versicolor"]
-virginica = data[data["Class"] == "Iris-virginica"]
+figure, axs = plt.subplots(2, 2, figsize=(8, 8))
 
-#print(data.groupby('Class').agg([np.mean, np.median])) #np.mean and np.medians are functions wihtin numPy.
+axs[0, 0].set_title("Sepal Length (cm)", weight='bold')
+axs[0, 1].set_title("Sepal Width (cm)", weight='bold')
+axs[1, 0].set_title("Petal Length (cm)", weight='bold')
+axs[1, 1].set_title("Petal Width (cm)", weight='bold')
+
+axs[0, 0].hist(set_sl, bins=9, edgecolor ='black')
+axs[0, 1].hist(set_sw, bins=9, edgecolor ='black')
+axs[1, 0].hist(set_pl, bins=9, edgecolor ='black')
+axs[1, 1].hist(set_pw, bins=9, edgecolor ='black')
+figure.suptitle('Setosa Histogram', weight='bold')
+plt.show()
+plt.savefig('images/Setosa_hist.png')
+
+#Versicolor Histogram
+
+versi = data[data["Class"] == "Iris-versicolor"]
+ver_sl = versi["Sepal Length"] #Setosa Sepal Lenght
+ver_sw = versi["Sepal Width"] #Setosa Sepal width
+ver_pl = versi["Petal Length"] #Petal Length
+ver_pw = versi["Petal Width"] # Petal Width
+
+figure, axs = plt.subplots(2, 2, figsize=(8, 8))
+
+axs[0, 0].set_title("Sepal Length (cm)", weight='bold')
+axs[0, 1].set_title("Sepal Width (cm)", weight='bold')
+axs[1, 0].set_title("Petal Length (cm)", weight='bold')
+axs[1, 1].set_title("Petal Width (cm)", weight='bold')
+
+axs[0, 0].hist(ver_sl, bins=7, edgecolor ='black')
+axs[0, 1].hist(ver_sw, bins=7, edgecolor ='black')
+axs[1, 0].hist(ver_pl, bins=7, edgecolor ='black')
+axs[1, 1].hist(ver_pw, bins=7, edgecolor ='black')
+figure.suptitle('Versicolor Histogram', weight='bold')
+plt.show()
+plt.savefig('images/Versicolor_hist.png')
+
+#Virginica Histogram
+virgin = data[data["Class"] == "Iris-virginica"]
+vg_sl = virgin["Sepal Length"] #Setosa Sepal Lenght
+vg_sw = virgin["Sepal Width"] #Setosa Sepal width
+vg_pl = virgin["Petal Length"] #Petal Length
+vg_pw = virgin["Petal Width"] # Petal Width
+
+figure, axs = plt.subplots(2, 2, figsize=(8, 8))
+
+axs[0, 0].set_title("Sepal Length (cm)", weight='bold')
+axs[0, 1].set_title("Sepal Width (cm)", weight='bold')
+axs[1, 0].set_title("Petal Length (cm)", weight='bold')
+axs[1, 1].set_title("Petal Width (cm)", weight='bold')
+
+axs[0, 0].hist(vg_sl, bins=7, edgecolor ='black')
+axs[0, 1].hist(vg_sw, bins=7, edgecolor ='black')
+axs[1, 0].hist(vg_pl, bins=7, edgecolor ='black')
+axs[1, 1].hist(vg_pw, bins=7, edgecolor ='black')
+figure.suptitle('Virginica Histogram', weight='bold')
+plt.show()
+plt.savefig('images/Virginica_hist.png')
+
+#Boxplots
 
 figure, ax = plt.subplots(2, 2, figsize=(8, 8))
 
-sns.boxplot(x =data['Class'], y= data['Sepal Length'], ax=ax[0,0]);
+sns.boxplot(x =data['Class'], y= data['Sepal Length'], ax=ax[0,0]); #Boxplot for Sepal Length
 ax[0, 0].set_title("Sepal Length (cm)", weight='bold' )
 ax[0, 0].set_xlabel("Class of Iris", weight='bold')
-sns.boxplot(x =data['Class'], y= data['Sepal Width'], ax=ax[0,1]);
+
+sns.boxplot(x =data['Class'], y= data['Sepal Width'], ax=ax[0,1]); #Boxplot for Sepal Width
 ax[0, 1].set_title("Sepal Width (cm)", weight='bold')
 ax[0, 1].set_xlabel("Class of Iris", weight='bold')
-sns.boxplot(x =data['Class'], y= data['Petal Length'], ax=ax[1,0]);
+
+sns.boxplot(x =data['Class'], y= data['Petal Length'], ax=ax[1,0]); #Boxplot for Petal Length
 ax[1, 0].set_title("Petal Length (cm)", weight='bold')
 ax[1, 0].set_xlabel("Class of Iris", weight='bold')
-sns.boxplot(x =data['Class'], y= data['Petal Width'], ax=ax[1,1]);
+
+sns.boxplot(x =data['Class'], y= data['Petal Width'], ax=ax[1,1]); #Boxplot for Petal Width
 ax[1, 1].set_title("Petal Width (cm)", weight='bold')
 ax[1, 1].set_xlabel("Class of Iris", weight='bold')
+
 figure.subplots_adjust(hspace=.5)
 figure.suptitle('Boxplots of Sepal and Petal Dimensions by Class', weight='bold')
 plt.show()
-plt.savefig('graphs/Boxplots.png')
+plt.savefig('images/Boxplots.png')
 
 #sepal_scatter = data[['Sepal Length', 'Sepal Width', 'Class']]
 iris_s = data[data['Class'] == 'Iris-setosa']
 iris_ver = data[data['Class'] == 'Iris-versicolor']
 iris_vir = data[data['Class'] == 'Iris-virginica']
 
-ax = iris_s.plot(x= 'Sepal Length', y ='Sepal Width', kind= 'scatter', c ='yellow', s=30, label= 'Iris-setosa')
+ax = iris_s.plot(x= 'Sepal Length', y ='Sepal Width', kind= 'scatter', c ='green', s=30, label= 'Iris-setosa')
 iris_ver.plot(x= 'Sepal Length', y ='Sepal Width', kind= 'scatter', ax= ax, c ='red', s=30, label= 'Iris-versicolor')
 iris_vir.plot(x= 'Sepal Length', y ='Sepal Width', kind= 'scatter', ax= ax, c ='blue', s=30, label= 'Iris-virginica ')
 plt.title('Sepal Length vs Width', weight='bold')
 plt.xlabel('Sepal Length (cm)', weight='bold')
 plt.show()
-plt.savefig('graphs/Sepal_scatter.png')
+plt.savefig('images/sepal_scatter.png')
 
-ax = iris_s.plot(x= 'Petal Length', y ='Petal Width', kind= 'scatter', c ='yellow', s=30, label= 'Iris-setosa')
+ax = iris_s.plot(x= 'Petal Length', y ='Petal Width', kind= 'scatter', c ='green', s=30, label= 'Iris-setosa')
 iris_ver.plot(x= 'Petal Length', y ='Petal Width', kind= 'scatter', ax= ax, c ='red', s=30, label= 'Iris-versicolor')
 iris_vir.plot(x= 'Petal Length', y ='Petal Width', kind= 'scatter', ax= ax, c ='blue', s=30, label= 'Iris-virginica ')
 plt.title('Petal Length vs Width', weight='bold')
 plt.xlabel('Petal Length (cm)', weight='bold')
 plt.show()
-plt.savefig('graphs/Petal_scatter.png')
+plt.savefig('images/petal_scatter.png')
 
 
 #sns.scatterplot(x='Sepal Length', y='Sepal Width', hue= 'class')

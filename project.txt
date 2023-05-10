@@ -36,7 +36,7 @@ Below is a technical summary of the dataframe:
 
 [150 rows x 5 columns]>
 
-Below is a list of statistics regarding this dataset: 
+Below is a statistical summary of each variable: 
 
        Sepal Length  Sepal Width  Petal Length  Petal Width
 count    150.000000   150.000000    150.000000   150.000000

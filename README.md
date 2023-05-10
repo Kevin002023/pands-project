@@ -6,6 +6,9 @@
 2. Project Outline
 3. Software Used
 4. Analysis
+    1. Univariate
+    2. Multivariate
+
 
 
 ## **Introduction to Dataset**
@@ -139,11 +142,11 @@ max        7.900000     4.400000      6.900000     2.500000
 The above commands were all added to 'project.txt' using the write() command. However this command expects any input to be a string, wheras the head(), tail(), info() and describe() funcitons all generate dataframes. To counteract this they were converted to strings in the write command.  
 
 
-##Univariate Analysis
+### Univariate Analysis
 
 Univariate Analysis where only one variable is looked at, at a time. This was done for Sepal Length, Sepal Width, Petal Length and Petal Width.
 
-#Histogram
+**Histogram**
 
 A Histogram is a visual representation of the distribution of values. The range of values are grouped into a series of intervals called 'bins' and the frequency of each value inside these bins is then plotted on the graph. The number of bins can greatly impact the effectiveness of the histogram. If we have too few, there will be a lack of detail making it difficult to identify any pattern, too many and the distribution will look rough and there will be too much "noise". ["Sturges Rule"](https://www.statology.org/sturges-rule/) is a method of identifying the optimal number of bins to use. 
 
@@ -170,10 +173,22 @@ A ['normal distribution'](https://www.techtarget.com/whatis/definition/normal-di
 
 -Petal Width: Again this has a bimodal distribution and skews to the right. 
 
+Histograms were also produced for each variable seperated by class. 
 
-###uninvariate analysis looks at one variable of a data set. i will do this for each of sepal length, sepal width, petal length and petal width
-- histograms
-- boxplots
+**Boxplot**
+
+A [boxplot](https://pandas.pydata.org/pandas-docs/version/0.25.3/reference/api/pandas.DataFrame.boxplot.html#pandas.DataFrame.boxplot) is another graphical representation of the distribution of a dataset.  They hightlight important statistical measures like range, median and outliers. The boxes are drawn between the first and third Quartile. The bold line in the middle of the box represnts the median. The 'whiskers' represent the range of data. Any dots above or below are outliers.
+
+Again for ease of comparison each variant was a subplot allowing all 4 on the same image. 
+
+![Boxplot](images\Boxplots.png)
+
+For both sepal length and width there is much overlap in the range of valuies for all 3 classes. It would be very difficult to idenity what class a iris belonged to based on either of these two varaibles. However it is immediately noticeable that this is not the case when comparing Petal lenght and width. While there is an overlap in the values for Iris-versicolor and Iris-virginica, the size of the petals for Iris-setosa are significantly smaller. In addition Iris-setosa has a much narrower range of values. 
+
+
+## Mutlivariate Analysis
+
+Multivariate analysis is where 2 or more variable are examined at once to try and identify a relationship between them. 
 
 
 
@@ -186,7 +201,7 @@ https://proclusacademy.com/blog/quicktip/boxplot-separate-yaxis/
 Making the labels bold = https://www.includehelp.com/python/bold-text-label-in-plot.aspx#:~:text=The%20command%20fontweight%3D'bold,or%20label%20in%20figure%20bold.
 
 
-Multivariage analysis = looks at a number for different variables and the relationshipt betwween them.
+Multivariate analysis = looks at a number for different variables and the relationshipt betwween them.
 - scatter pltos
 
 ScatterPlot
