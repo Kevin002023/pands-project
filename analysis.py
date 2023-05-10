@@ -53,8 +53,8 @@ axs[0, 1].hist(sep_wit, bins=9, edgecolor ='black')
 axs[1, 0].hist(pet_len, bins=9, edgecolor ='black')
 axs[1, 1].hist(pet_wit, bins=9, edgecolor ='black')
 figure.suptitle('Multiclass Histogram', weight='bold')
-plt.show()
 plt.savefig('images/hist_iris.png')
+plt.show()
 
 #histograms that have been seperated by class
 
@@ -77,15 +77,15 @@ axs[0, 1].hist(set_sw, bins=9, edgecolor ='black')
 axs[1, 0].hist(set_pl, bins=9, edgecolor ='black')
 axs[1, 1].hist(set_pw, bins=9, edgecolor ='black')
 figure.suptitle('Setosa Histogram', weight='bold')
-plt.show()
 plt.savefig('images/Setosa_hist.png')
+plt.show()
 
 #Versicolor Histogram
 
 versi = data[data["Class"] == "Iris-versicolor"]
-ver_sl = versi["Sepal Length"] #Setosa Sepal Lenght
-ver_sw = versi["Sepal Width"] #Setosa Sepal width
-ver_pl = versi["Petal Length"] #Petal Length
+ver_sl = versi["Sepal Length"] # Sepal Lenght
+ver_sw = versi["Sepal Width"] # Sepal width
+ver_pl = versi["Petal Length"] # Petal Length
 ver_pw = versi["Petal Width"] # Petal Width
 
 figure, axs = plt.subplots(2, 2, figsize=(8, 8))
@@ -100,14 +100,14 @@ axs[0, 1].hist(ver_sw, bins=7, edgecolor ='black')
 axs[1, 0].hist(ver_pl, bins=7, edgecolor ='black')
 axs[1, 1].hist(ver_pw, bins=7, edgecolor ='black')
 figure.suptitle('Versicolor Histogram', weight='bold')
-plt.show()
 plt.savefig('images/Versicolor_hist.png')
+plt.show()
 
 #Virginica Histogram
 virgin = data[data["Class"] == "Iris-virginica"]
-vg_sl = virgin["Sepal Length"] #Setosa Sepal Lenght
-vg_sw = virgin["Sepal Width"] #Setosa Sepal width
-vg_pl = virgin["Petal Length"] #Petal Length
+vg_sl = virgin["Sepal Length"] # Sepal Lenght
+vg_sw = virgin["Sepal Width"] # Sepal width
+vg_pl = virgin["Petal Length"] # Petal Length
 vg_pw = virgin["Petal Width"] # Petal Width
 
 figure, axs = plt.subplots(2, 2, figsize=(8, 8))
@@ -122,8 +122,8 @@ axs[0, 1].hist(vg_sw, bins=7, edgecolor ='black')
 axs[1, 0].hist(vg_pl, bins=7, edgecolor ='black')
 axs[1, 1].hist(vg_pw, bins=7, edgecolor ='black')
 figure.suptitle('Virginica Histogram', weight='bold')
-plt.show()
 plt.savefig('images/Virginica_hist.png')
+plt.show()
 
 #Boxplots
 
@@ -147,8 +147,8 @@ ax[1, 1].set_xlabel("Class of Iris", weight='bold')
 
 figure.subplots_adjust(hspace=.5)
 figure.suptitle('Boxplots of Sepal and Petal Dimensions by Class', weight='bold')
-plt.show()
 plt.savefig('images/Boxplots.png')
+plt.show()
 
 #sepal_scatter = data[['Sepal Length', 'Sepal Width', 'Class']]
 iris_s = data[data['Class'] == 'Iris-setosa']
@@ -160,17 +160,16 @@ iris_ver.plot(x= 'Sepal Length', y ='Sepal Width', kind= 'scatter', ax= ax, c ='
 iris_vir.plot(x= 'Sepal Length', y ='Sepal Width', kind= 'scatter', ax= ax, c ='blue', s=30, label= 'Iris-virginica ')
 plt.title('Sepal Length vs Width', weight='bold')
 plt.xlabel('Sepal Length (cm)', weight='bold')
-plt.show()
 plt.savefig('images/sepal_scatter.png')
+plt.show()
 
 ax = iris_s.plot(x= 'Petal Length', y ='Petal Width', kind= 'scatter', c ='green', s=30, label= 'Iris-setosa')
 iris_ver.plot(x= 'Petal Length', y ='Petal Width', kind= 'scatter', ax= ax, c ='red', s=30, label= 'Iris-versicolor')
 iris_vir.plot(x= 'Petal Length', y ='Petal Width', kind= 'scatter', ax= ax, c ='blue', s=30, label= 'Iris-virginica ')
 plt.title('Petal Length vs Width', weight='bold')
 plt.xlabel('Petal Length (cm)', weight='bold')
-plt.show()
 plt.savefig('images/petal_scatter.png')
-
+plt.show()
 
 #sns.scatterplot(x='Sepal Length', y='Sepal Width', hue= 'class')
 #plt.show()
