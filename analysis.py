@@ -169,5 +169,9 @@ plt.xlabel('Petal Length (cm)', weight='bold')
 plt.savefig('images/petal_scatter.png')
 plt.show()
 
-sns.pairplot(data, hue ='class')
+
+# Pairplots comparing each variable to all others. 
+
+sns.pairplot(data, hue ='Class')
+plt.savefig('images/Pairplot.png')
 plt.show

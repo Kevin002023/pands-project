@@ -204,7 +204,11 @@ However, Iris-Setosa is grouped separately to the other two. These variables cou
 
 Here, it can be seen again a division between Iris-Setosa and the other two classes. Although in this case there is more of a divergence between Iris-Versicolor and Iris-Virginica than when looking at their Sepals.  If the petal has a length of less than 3cm and a width of less than 1cm there is a strong likelihood that it belongs to the Iris-setosa class. 
 
+## Pair Plots
 
+A [pair-plot](https://datagy.io/seaborn-pairplot/) is another method of looking at the relationship of two variables. They compare each variable to every other variable. 
+
+!["PairPlot"]()
 
 ## Technical Information
 
@@ -234,3 +238,5 @@ In order to distinguish the Class by colour I created 3 different Dataframes, on
 ###Results
 
 The 
+
+I can already conclude that it seems that there is no relationship between the sepal length and sepal width and probably petal length and width have the strongest linear relationship.
