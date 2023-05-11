@@ -104,11 +104,11 @@ plt.savefig('images/Versicolor_hist.png')
 plt.show()
 
 #Virginica Histogram
-virgin = data[data["Class"] == "Iris-virginica"]
-vg_sl = virgin["Sepal Length"] # Sepal Lenght
-vg_sw = virgin["Sepal Width"] # Sepal width
-vg_pl = virgin["Petal Length"] # Petal Length
-vg_pw = virgin["Petal Width"] # Petal Width
+virg = data[data["Class"] == "Iris-virginica"]
+vg_sl = virg["Sepal Length"] # Sepal Lenght
+vg_sw = virg["Sepal Width"] # Sepal width
+vg_pl = virg["Petal Length"] # Petal Length
+vg_pw = virg["Petal Width"] # Petal Width
 
 figure, axs = plt.subplots(2, 2, figsize=(8, 8))
 
@@ -150,60 +150,24 @@ figure.suptitle('Boxplots of Sepal and Petal Dimensions by Class', weight='bold'
 plt.savefig('images/Boxplots.png')
 plt.show()
 
-#sepal_scatter = data[['Sepal Length', 'Sepal Width', 'Class']]
-iris_s = data[data['Class'] == 'Iris-setosa']
-iris_ver = data[data['Class'] == 'Iris-versicolor']
-iris_vir = data[data['Class'] == 'Iris-virginica']
+#Multivariate Analysis 
+#Scatter plots
 
-ax = iris_s.plot(x= 'Sepal Length', y ='Sepal Width', kind= 'scatter', c ='green', s=30, label= 'Iris-setosa')
-iris_ver.plot(x= 'Sepal Length', y ='Sepal Width', kind= 'scatter', ax= ax, c ='red', s=30, label= 'Iris-versicolor')
-iris_vir.plot(x= 'Sepal Length', y ='Sepal Width', kind= 'scatter', ax= ax, c ='blue', s=30, label= 'Iris-virginica ')
+ax = setosa.plot(x= 'Sepal Length', y ='Sepal Width', kind= 'scatter', c ='green', s=30, label= 'Iris-setosa')
+versi.plot(x= 'Sepal Length', y ='Sepal Width', kind= 'scatter', ax= ax, c ='red', s=30, label= 'Iris-versicolor')
+virg.plot(x= 'Sepal Length', y ='Sepal Width', kind= 'scatter', ax= ax, c ='blue', s=30, label= 'Iris-virginica ')
 plt.title('Sepal Length vs Width', weight='bold')
 plt.xlabel('Sepal Length (cm)', weight='bold')
 plt.savefig('images/sepal_scatter.png')
 plt.show()
 
-ax = iris_s.plot(x= 'Petal Length', y ='Petal Width', kind= 'scatter', c ='green', s=30, label= 'Iris-setosa')
-iris_ver.plot(x= 'Petal Length', y ='Petal Width', kind= 'scatter', ax= ax, c ='red', s=30, label= 'Iris-versicolor')
-iris_vir.plot(x= 'Petal Length', y ='Petal Width', kind= 'scatter', ax= ax, c ='blue', s=30, label= 'Iris-virginica ')
+ax = setosa.plot(x= 'Petal Length', y ='Petal Width', kind= 'scatter', c ='green', s=30, label= 'Iris-setosa')
+versi.plot(x= 'Petal Length', y ='Petal Width', kind= 'scatter', ax= ax, c ='red', s=30, label= 'Iris-versicolor')
+virg.plot(x= 'Petal Length', y ='Petal Width', kind= 'scatter', ax= ax, c ='blue', s=30, label= 'Iris-virginica ')
 plt.title('Petal Length vs Width', weight='bold')
 plt.xlabel('Petal Length (cm)', weight='bold')
 plt.savefig('images/petal_scatter.png')
 plt.show()
 
-#sns.scatterplot(x='Sepal Length', y='Sepal Width', hue= 'class')
-#plt.show()
-#ax= data.plot.scatter(x="Sepal Length", y= "Sepal Width", colour =)
-'''
-pd.options.display.max_rows = 999 # 
-
-dataset= pd.read_csv(filename, sep= ",", 
-                       names=["Sepal Length", "Sepal Width", "Petal Length", "Petal Width", "Class"]) # adding headers to the dataframe 
-#(https://www.geeksforgeeks.org/how-to-add-header-row-to-a-pandas-dataframe/)
-dataset1 = dataset.set_index('Sepal Length') # remove the first empty column 
-#https://datagy.io/pandas-drop-index-column/#:~:text=The%20most%20straightforward%20way%20to,a%20column%20in%20the%20DataFrame.
-
-#print(dataset1.head())
-#print(dataset.describe())
-
-s_len = dataset["Sepal Length"]
-avg_s_len = s_len.mean()
-print(avg_s_len)
-
-s_wid = dataset["Sepal Width"]
-avg_s_wid = s_wid.mean()
-print (avg_s_wid)
-
-s_len_and_class = dataset[["Sepal Length", "Class"]]
-print(s_len_and_class)
-
-Class= dataset["Class"]
-
-#plt.hist(s_len)
-plt.plot(Class,s_len, color = 'r', marker ='D' )
-plt.show()
-plt.savefig("Sepal Lenght vs Class")
-
-
-
-'''
+sns.pairplot(data, hue ='class')
+plt.show

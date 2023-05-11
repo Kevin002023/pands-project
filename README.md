@@ -13,9 +13,9 @@
 
 ## **Introduction to Dataset**
 
-The Fischers Iris dataset was made by famous by statistician Ronald Fischer when he used it in his 1936 paper ["The use of multiple measurements in taxonomic problems"](https://onlinelibrary.wiley.com/doi/10.1111/j.1469-1809.1936.tb02137.x). However it was actually compiled before this by Edgar Anderson, a botanist who was examining the variation within the Iris flower. 
+The Fischers Iris dataset was made by famous by statistician Ronald Fischer when he used it in his 1936 paper ["The use of multiple measurements in taxonomic problems"](https://onlinelibrary.wiley.com/doi/10.1111/j.1469-1809.1936.tb02137.x). However, it was actually compiled before this by Edgar Anderson, a botanist who was examining the variation within the Iris flower. 
 
-The 1936 paper was proposing 'Fishers linear discriminant' which today is known as linear discrimanent analysis. This is a [method](https://www.geeksforgeeks.org/ml-linear-discriminant-analysis/) used in statistics to find a combination of features that can best seperate the data into distinct classes.
+The 1936 paper was proposing 'Fishers linear discriminant' which today is known as linear discriminant analysis. This is a [method](https://www.geeksforgeeks.org/ml-linear-discriminant-analysis/) used in statistics to find a combination of features that can best seperate the data into distinct classes.
 
 The dataset is hosted on the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/iris). It consists of 3 classes of iris; 
 
@@ -38,15 +38,15 @@ It is a multivariate dataset containing information on 150 specimens of iris. Th
 - Iris Versicolour
 - Iris Virginica
 
-Fischer used this information to identify a method of distinguishing between the classes of iris's. It has since been used as a benchmark dataset for machine learning algorithims.
+Fischer used this information to identify a method of distinguishing between the classes of iris's. It has since been used as a benchmark dataset for machine learning algorithms.
 
 ## **Project Outline**
 
-The purpose of the project was to research the Iris dataset, import it to python and write a program called 'analysis.py' that would be used to analyse the dataset. We were to produce plots of this analysis and output the results fo any commands to a text file called 'project.txt'.
+The purpose of the project was to research the Iris dataset, import it to python and write a program called 'analysis.py' that would be used to analyse the dataset. We were to produce plots of this analysis and output the results of any commands to a text file called 'project.txt'.
 
 The purpose of the analysis done by Fisher on this dataset was to see if he could distinguish the class of iris based on the metrics it contains or a combination thereof.  I would like to try and replicate this. 
 
-In order to acheive this, a univariate analysis was carried out, where a singular variable was looked at. This was done by producing plots to show the ditribution and variance for Sepal and petal lenghts and widths. The [Pandas documnetation](https://pandas.pydata.org/pandas-docs/version/0.13.1/visualization.html#targeting-different-subplots) was a great source of information on generating plots.
+In order to achieve this, a univariate analysis was carried out, where a singular variable was looked at. This was done by producing plots to show the distribution and variance for Sepal and petal lengths and widths. The [Pandas documnetation](https://pandas.pydata.org/pandas-docs/version/0.13.1/visualization.html#targeting-different-subplots) was a great source of information on generating plots.
 
 After this a multivariate analysis was performed, where the relationship between certain variables was looked at.
 
@@ -55,7 +55,7 @@ After this a multivariate analysis was performed, where the relationship between
 
 This project was done using python on Visual Studio Code. It was used to produce both the code and this README.md file.
 
-The dataset is availble from the machine learning repository of UCI(http://archive.ics.uci.edu/ml/datasets/Iris). 
+The dataset is available from the machine learning repository of UCI(http://archive.ics.uci.edu/ml/datasets/Iris). 
 
 The packages I used are as follows:
 
@@ -67,18 +67,18 @@ import seaborn as sns
 
 ````
 
-Pandas allows you to manipulate the dataset as a dataframe. It was used to import the dataset, set up a dataframe, valdidate the valeus and then for aggregation and grouping of specific variables. I made extensive use of the Pandas documentation which can be found [here](https://pandas.pydata.org/pandas-docs/stable/getting_started/index.html)
+Pandas allows you to manipulate the dataset as a dataframe. It was used to import the dataset, set up a dataframe, validate the values and then for aggregation and grouping of specific variables. I made extensive use of the Pandas documentation which can be found [here](https://pandas.pydata.org/pandas-docs/stable/getting_started/index.html)
 
 NumPy was used for mathematical operations adn when working with arrays/matrices. Its documentation can be found [here](https://numpy.org/doc/stable/)
 
 Matplotlib is an extension of NumPy and was used to present the data in plots. Its documentation is [here](https://matplotlib.org/stable/index.html)
 
-Seaborn was also used in the visualistation of the data. It has some extended functionality on Matplotlib when making plots. Seaborn documentation is [here](https://seaborn.pydata.org/)
+Seaborn was also used in the visualization of the data. It has some extended functionality on Matplotlib when making plots. Seaborn documentation is [here](https://seaborn.pydata.org/)
 
 
 ## **Analysis**
 
-I chose to import the dataset using the url and the pandas read_csv() function. I did this so the code would work even with the dataset unattached to the repository. The dataset is called 'data' in my code hereafter. 
+The dataset was imported using the url and the pandas read_csv() function.  This was done so the code would work even with the dataset unattached to the repository. The dataset is called 'data' in my code hereafter. 
 
 ````
 data_url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
@@ -86,7 +86,7 @@ col_headings = ['Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width', 'C
 data= pd.read_csv(data_url, sep=",",  names = col_headings,)
 
 ````
-The next step was to look at the data and run some checks to make sure it looks as expected. However as I wanted all commands to be outputted to my textfile ['project.txt'](https://github.com/Kevin002023/pands-project/blob/main/project.txt), I first created it, using the methods [here](https://www.geeksforgeeks.org/reading-writing-text-files-python/). 
+The next step was to look at the data and run some checks to make sure it looks as expected. However, as I wanted all commands to be outputted to my textfile ['project.txt'](https://github.com/Kevin002023/pands-project/blob/main/project.txt), I first created it, using the methods [here](https://www.geeksforgeeks.org/reading-writing-text-files-python/). 
 
 ``
 with open('project.txt', 'w') as f:
@@ -139,7 +139,7 @@ max        7.900000     4.400000      6.900000     2.500000
 
 ````
 
-The above commands were all added to 'project.txt' using the write() command. However this command expects any input to be a string, wheras the head(), tail(), info() and describe() funcitons all generate dataframes. To counteract this they were converted to strings in the write command.  
+The above commands were all added to 'project.txt' using the write() command. However, this command expects any input to be a string, whereas the head(), tail(), info() and describe() functions all generate dataframes. To counteract this they were converted to strings in the write command.  
 
 
 ### Univariate Analysis
@@ -154,10 +154,10 @@ A Histogram is a visual representation of the distribution of values. The range 
 Optimal Bins = ⌈log2n + 1⌉
 ``
  
-As each histogram will be for one data metric, there is 150 datapoints in each histogram. This means the optimal number of bins is 9. 
+As each histogram will be for one data metric, there are 150 datapoints in each histogram. This means the optimal number of bins is 9. 
 
 
-In this case each variable was plotted on its own seperate histogram. To do this a series was created for each variable and then used to create a plot. 
+In this case each variable was plotted on its own separate histogram. To do this a series was created for each variable and then used to create a plot. 
 
 By creating an array called ``axs``, each variable could have its own subplot on the one image. 
 
@@ -165,7 +165,7 @@ By creating an array called ``axs``, each variable could have its own subplot on
 
 A ['normal distribution'](https://www.techtarget.com/whatis/definition/normal-distribution#:~:text=What%20is%20normal%20distribution%3F,the%20mean%20of%20the%20distribution.) of values will have a bell curve. 
 
--Sepal length: Has a unimodal distribution (ie, a singular peak). while it isnt strictly symmetrical, it can be considered normal distribution wiht a slight skew to the right.
+-Sepal length: Has a unimodal distribution (ie, a singular peak). While it isn't strictly symmetrical, it can be considered normal distribution with a slight skew to the right.
 
 -Sepal Width: This also has a unimodal distribution and the classical bell shape you would expect from a normal distribution.
 
@@ -173,23 +173,43 @@ A ['normal distribution'](https://www.techtarget.com/whatis/definition/normal-di
 
 -Petal Width: Again this has a bimodal distribution and skews to the right. 
 
-Histograms were also produced for each variable seperated by class. 
+Histograms were also produced for each variable separated by class. 
 
 **Boxplot**
 
-A [boxplot](https://pandas.pydata.org/pandas-docs/version/0.25.3/reference/api/pandas.DataFrame.boxplot.html#pandas.DataFrame.boxplot) is another graphical representation of the distribution of a dataset.  They hightlight important statistical measures like range, median and outliers. The boxes are drawn between the first and third Quartile. The bold line in the middle of the box represnts the median. The 'whiskers' represent the range of data. Any dots above or below are outliers.
+A [boxplot](https://pandas.pydata.org/pandas-docs/version/0.25.3/reference/api/pandas.DataFrame.boxplot.html#pandas.DataFrame.boxplot) is another graphical representation of the distribution of a dataset.  They highlight important statistical measures like range, median and outliers. The boxes are drawn between the first and third Quartile. The bold line in the middle of the box represents the median. The 'whiskers' represent the range of data. Any dots above or below are outliers.
 
 Again for ease of comparison each variant was a subplot allowing all 4 on the same image. 
 
 ![Boxplot](images\Boxplots.png)
 
-For both sepal length and width there is much overlap in the range of valuies for all 3 classes. It would be very difficult to idenity what class a iris belonged to based on either of these two varaibles. However it is immediately noticeable that this is not the case when comparing Petal lenght and width. While there is an overlap in the values for Iris-versicolor and Iris-virginica, the size of the petals for Iris-setosa are significantly smaller. In addition Iris-setosa has a much narrower range of values. 
+For both sepal length and width there is much overlap in the range of values for all 3 classes. It would be very difficult to identity what class an iris belonged to based on either of these two variables. However,; it is immediately noticeable that this is not the case when comparing Petal length and width. While there is an overlap in the values for Iris-versicolor and Iris-virginica, the size of the petals for Iris-setosa are significantly smaller. In addition, Iris-setosa has a much narrower range of values. 
 
 
 ## Mutlivariate Analysis
 
 Multivariate analysis is where 2 or more variable are examined at once to try and identify a relationship between them. 
 
+**Scatter Plot**
+
+This is a chart that shows the relationship between two variables. In this case we explored the relationship between Sepal Length and Sepal Width and then Petal Length and Petal Width. 
+
+![Scatter Plot of Sepal Length vs Sepal Width (cm)](https://github.com/Kevin002023/pands-project/blob/main/images/Sepal_scatter.png)
+
+From looking at this plot, we can see there is a great overlap in Sepal values for both Iris-Versicolor and Iris-Virginica. It would be very difficult to distinguish between these classes based on these variable. 
+
+However, Iris-Setosa is grouped separately to the other two. These variables could be used in identifying a specimen from this class. Based on this (albeit limited) dataset if the sepals have a width greater than 3cm and a length less than 6cm it is likely Iris-Setosa.
+
+![Scatter Plot of Petal Length vs Petal Width(cm)](https://github.com/Kevin002023/pands-project/blob/main/images/Petal_scatter.png)
+
+Here, it can be seen again a division between Iris-Setosa and the other two classes. Although in this case there is more of a divergence between Iris-Versicolor and Iris-Virginica than when looking at their Sepals.  If the petal has a length of less than 3cm and a width of less than 1cm there is a strong likelihood that it belongs to the Iris-setosa class. 
+
+
+
+## Technical Information
+
+Language
+Python 3.09.13
 
 
 As there will be multiple graphs, I wanted to save them all to same folder "graphs". I did this by using the relative path within the 'fig.savefig' (command)[https://stackoverflow.com/questions/66583370/matplotlib-plot-image-save-path-python-vs-code]
@@ -201,7 +221,7 @@ https://proclusacademy.com/blog/quicktip/boxplot-separate-yaxis/
 Making the labels bold = https://www.includehelp.com/python/bold-text-label-in-plot.aspx#:~:text=The%20command%20fontweight%3D'bold,or%20label%20in%20figure%20bold.
 
 
-Multivariate analysis = looks at a number for different variables and the relationshipt betwween them.
+Multivariate analysis = looks at a number for different variables and the relationship between them.
 - scatter pltos
 
 ScatterPlot
