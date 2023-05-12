@@ -2,7 +2,7 @@
 
 ## **Table of Contents**
 
-1. [Introduction to Dataset](heading1)
+1. [Introduction to Dataset](#introduction-to-dataset)
 2. [Project Outline](Head2)
 3. [Software Used](Head3)
 4. [Analysis](Head4)
@@ -14,7 +14,7 @@
 
 
 
-## **Introduction to Dataset**{#heading1}
+## **Introduction to Dataset**
 
 The Fischers Iris dataset was made by famous by statistician Ronald Fischer when he used it in his 1936 paper ["The use of multiple measurements in taxonomic problems"](https://onlinelibrary.wiley.com/doi/10.1111/j.1469-1809.1936.tb02137.x). However, it was actually compiled before this by Edgar Anderson, a botanist who was examining the variation within the Iris flower. 
 
