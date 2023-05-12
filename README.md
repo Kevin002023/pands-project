@@ -222,15 +222,15 @@ This data-set is often used as a test case for machine learning and data-analysi
 
 - Setosa
 
-Setosa Iris's have short and relatively wide sepals. This can be seen in the [boxplot](https://github.com/Kevin002023/pands-project/blob/main/images/Boxplots.png). The sepal length ranges from 4cm to 5.8cm and the width from 2.3cm to 4.4cm. Its petals are significantly shorter and narrower in comparison to the other 2 classes. The petal length ranges from 1cm to 2cm and the width 0.1cm to  0.6cm. The shorter petals and wider sepals can be seen in the iris picture [above](https://github.com/Kevin002023/pands-project/blob/main/images/iris-image.png)
+Setosa Iris's have short and relatively wide sepals. This can be seen in the [boxplot](https://github.com/Kevin002023/pands-project/blob/main/images/Boxplots.png). The sepal length averages at 5.01cm and the average width is 3.42cm. Its petals are significantly shorter and narrower in comparison to the other 2 classes. The average petal length is 1.46cm and the width is .24cm. The shorter petals and wider sepals can be seen in the iris picture [above](https://github.com/Kevin002023/pands-project/blob/main/images/iris-image.png)
 
 - Versicolor
 
-The versicolor sepals have a length from 5cm to 7cm and a width between 2cm and 3.4cm. Their petals have a length between 3.2cm and 5.1cm and a width from 1cm to 1.9cm.
+The versicolor sepals have an average length of 5.93cm and a width of 2.77cm. Their petals have an average length of 4.26cm and a width of 1.33cm.
 
 - Virginica
 
-The sepals of the Virignica are slightly longer than Versicolor. They range from 5.5cm to 9cm but they have a similar width at 2.5cm to 3.5cm.
+The sepals of the Virignica are slightly longer than Versicolor. They average 6.59cm but they have a similar width at 2.97cm. Their petals average a length of 5.55cm and a width of 2.02cm.
 
 The first thing to notice when looking at the above analyses, is that there is a much greater overlap between Iris-versicolor and Iris-virginica than that of Iris-setosa. Iris-setosa is further apart from the other two classes in all variables but particularly regarding the petals. Based on the limited view this data allows, this may indicate an older evolutionary divergence. This, is of course outside the scope of this project and would require a much greater examination of the iris plant. 
 

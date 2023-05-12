@@ -133,7 +133,7 @@ plt.show()
 set_s_l_avg = (stat.mean(set_sl))   #setosa sep length average
 set_s_w_avg = (stat.mean(set_sw))   #setosa sep width average
 set_p_l_avg = (stat.mean(set_pl))   #setosa pet length average
-set_p_l_avg = (stat.mean(set_pw))    #setosa pet width average
+set_p_w_avg = (stat.mean(set_pw))    #setosa pet width average
 
 ver_s_l_avg = (stat.mean(ver_sl))   #versicolor sep length average
 ver_s_w_avg = (stat.mean(ver_sw))   #versicolor sep width average
@@ -150,7 +150,7 @@ with open('project.txt', 'a') as f:
     f.write(f'The average Sepal length of the Setosa iris is  {set_s_l_avg}cm\n')
     f.write(f'The average Sepal width of the Setosa iris is {set_s_w_avg}cm\n')
     f.write(f'The average Petal length of the Setosa iris is {set_p_l_avg}cm\n')
-    f.write(f'The average Petal width of the Setosa iris is {set_p_l_avg}cm\n\n')
+    f.write(f'The average Petal width of the Setosa iris is {set_p_w_avg}cm\n\n')
     f.write(f'The average Sepal length of the Versicolor iris is  {ver_s_l_avg}cm\n')
     f.write(f'The average Sepal width of the Versicolor iris is {ver_s_w_avg}cm\n')
     f.write(f'The average Petal length of the Versicolor iris is {ver_p_l_avg}cm\n')
@@ -158,7 +158,7 @@ with open('project.txt', 'a') as f:
     f.write(f'The average Sepal length of the Virginica iris is  {virg_s_l_avg}cm\n')
     f.write(f'The average Sepal width of the Virginica iris is {virg_s_w_avg}cm\n')
     f.write(f'The average Petal length of the Virginica iris is {virg_p_l_avg}cm\n')
-    f.write(f'The average Petal width of the Virginica iris is {virg_p_l_avg}cm\n\n')
+    f.write(f'The average Petal width of the Virginica iris is {virg_p_w_avg}cm\n\n')
 
 
 #Boxplots
