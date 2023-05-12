@@ -9,7 +9,7 @@
     1. [Univariate](#univariate)
     2. [Multivariate](#multivariate)
 5. [Conclusion](#conclusion)
-6. [References](#references\)
+6. [References](#references)
 
 
 
