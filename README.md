@@ -6,8 +6,8 @@
 2. [Project Outline](#project-outline)
 3. [Software Used](#software-used)
 4. [Analysis](#analysis)
-    1. [Univariate](#univariate)
-    2. [Multivariate](#multivariate)
+    1. [Univariate Analysis](#univariate-analysis)
+    2. [Multivariate Analysis](#multivariate-analysis)
 5. [Conclusion](#conclusion)
 6. [References](#references)
 
