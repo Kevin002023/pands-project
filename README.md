@@ -177,11 +177,11 @@ Histograms were also produced for each variable separated by class.
 
 A [boxplot](https://pandas.pydata.org/pandas-docs/version/0.25.3/reference/api/pandas.DataFrame.boxplot.html#pandas.DataFrame.boxplot) is another graphical representation of the distribution of a dataset.  They highlight important statistical measures like range, median and outliers. The boxes are drawn between the first and third Quartile. The bold line in the middle of the box represents the median. The 'whiskers' represent the range of data. Any dots above or below are outliers.
 
-Again for ease of comparison each variant was a subplot allowing all 4 on the same image. 
+Again for ease of comparison each variable was a subplot allowing all 4 on the same image. 
 
 ![Boxplot](https://github.com/Kevin002023/pands-project/blob/main/images/Boxplots.png)
 
-For both sepal length and width there is much overlap in the range of values for all 3 classes. It would be very difficult to identity what class an iris belonged to based on either of these two variables. However, it is immediately noticeable that this is not the case when comparing Petal length and width. While there is an overlap in the values for Iris-versicolor and Iris-virginica, the size of the petals for Iris-setosa are significantly smaller. In addition, Iris-setosa has a much narrower range of values. 
+For both sepal length and width there is much overlap in the range of values for all 3 classes. It would be very difficult to identity what class an iris belonged to based on either of these two variables. However, it is immediately noticeable that this is not the case when comparing Petal length and width. While there is an overlap in the values for Iris-versicolor and Iris-virginica, the size of the petals for Iris-setosa are significantly smaller. In addition, Iris-setosa has a much narrower range of values. This is confirmed when looking at the distribution of values in the [class specific histograms](https://github.com/Kevin002023/pands-project/tree/main/images/Class%20specific%20Histograms). 
 
 
 ## Multivariate Analysis
@@ -216,17 +216,29 @@ The other variables do not seem to have any linear relationship between each oth
 
 ## **Conclusion**
 
-This data-set is often used as a test case for machine learning and data-analysis algorithims. However; when using it to draw conclusions about the morphology of Iris plants, it is important to remember that it is a very small sample size. Having only 150 samples, it is not sufficient to draw biological conclusions. These would typically require a much broader dataset. It does however, indicate relationships between the 3 classes of iris and indeed between some of the variables themselves. 
+This data-set is often used as a test case for machine learning and data-analysis algorithms. However, when using it to draw conclusions about the morphology of Iris plants, it is important to remember that it is a very small sample size. Having only 150 samples, it is not sufficient to draw biological conclusions. These would typically require a much broader dataset. It does however, indicate relationships between the 3 classes of iris and indeed between some of the variables themselves. 
 
-The first thing to notice when looking at the above analysises, is that there is a much greater overlap between Iris-versicolor and Iris-virginica than that of Iris-setosa. Iris-setosa is further apart from the other two classes in all variablesbut particularly regarding the petals. This may indicate an older evolutionary divergence. This, is of course outside the scope of this project and would require a much greater examiniation of the iris plant. 
+**Summary of each class:**
 
-I can already conclude that it seems that there is no relationship between the sepal length and sepal width and probably petal length and width have the strongest linear relationship.
+- Setosa
+Setosa Iris's have short and relatively wide sepals. This can be seen in the [boxplot](https://github.com/Kevin002023/pands-project/blob/main/images/Boxplots.png). The sepal length ranges from 4cm to 5.8cm and the width from 2.3cm to 4.4cm. Its petals are significantly shorter and narrower in comparison to the other 2 classes. The petal length ranges from 1cm to 2cm and the width 0.1cm to  0.6cm. The shorter petals and wider sepals can be seen in the iris picture [above](https://github.com/Kevin002023/pands-project/blob/main/images/iris-image.png)
 
-From looking at the [boxplot]() it is clear that the Iris-setosa has shorter and narrower petals than the other two classes. This is confirmed when looking at the distribution of values in the class specific histograms. 
+- Versicolor
+The versicolor sepals have a length from 5cm to 7cm and a width between 2cm and 3.4cm. Their petals have a length between 3.2cm and 5.1cm and a width from 1cm to 1.9cm.
+
+- Virginica
+The sepals of the Virignica are slightly longer than Versicolor. They range from 5.5cm to 9cm but they have a similar width at 2.5cm to 3.5cm.
+
+The first thing to notice when looking at the above analyses, is that there is a much greater overlap between Iris-versicolor and Iris-virginica than that of Iris-setosa. Iris-setosa is further apart from the other two classes in all variables but particularly regarding the petals. Based on the limited view this data allows, this may indicate an older evolutionary divergence. This, is of course outside the scope of this project and would require a much greater examination of the iris plant. 
+
+When looking at the variables we can see a clear positive linear relationship between petal length and petal width.
+
+As stated in the project outline, the purpose of Fishers paper was to identify ways to discriminate between the different classes. I believe based on the above analysis it is possible to do this for 1 of the 3 classes 'Iris-setosa'. If an unknown iris has a petal shorter than 2cm and narrower 0.75cm, there is a strong likelihood that it belongs to the setosa class.  
+
 ## **References**
 
 
-- “Pandas documentation — pandas 2.0.1 documentation,” Pydata.org. [Online]. Available: https://pandas.pydata.org/pandas-docs/stable/index.html. 
+- “Pandas documentation — pandas 2.0.1 documentation,” Pydata.org. [Online]. Available: https://pandas.p ydata.org/pandas-docs/stable/index.html. 
 
 - “NumPy documentation — NumPy v1.24 manual,” Numpy.org. [Online]. Available: https://numpy.org/doc/stable/.
 
