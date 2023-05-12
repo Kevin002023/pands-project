@@ -2,16 +2,19 @@
 
 ## **Table of Contents**
 
-1. Introduction to Dataset
-2. Project Outline
-3. Software Used
-4. Analysis
-    1. Univariate
-    2. Multivariate
+1. [Introduction to Dataset](heading1)
+2. [Project Outline](Head2)
+3. [Software Used](Head3)
+4. [Analysis](Head4)
+    1. [Univariate](Head4.1)
+    2. [Multivariate](Head4.2)
+5. [Results](Head5)
+6. [Technical Information](Head6)
+7. [Conclusion](Head7)
 
 
 
-## **Introduction to Dataset**
+## **Introduction to Dataset** {heading1}
 
 The Fischers Iris dataset was made by famous by statistician Ronald Fischer when he used it in his 1936 paper ["The use of multiple measurements in taxonomic problems"](https://onlinelibrary.wiley.com/doi/10.1111/j.1469-1809.1936.tb02137.x). However, it was actually compiled before this by Edgar Anderson, a botanist who was examining the variation within the Iris flower. 
 
@@ -19,12 +22,8 @@ The 1936 paper was proposing 'Fishers linear discriminant' which today is known 
 
 The dataset is hosted on the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/iris). It consists of 3 classes of iris; 
 
-<img src="https://github.com/Kevin002023/pands-project/blob/main/images/Setosa.jpg" width="250" height="250" title="Iris-setosa">
--Iris-Setosa
-<img src="https://github.com/Kevin002023/pands-project/blob/main/images/Veriscolor.jpg" width="250" height="250" title="Iris-veriscolor">
--Iris-veriscolor
-<img src="https://github.com/Kevin002023/pands-project/blob/main/images/Virginica.jpg" width="250" height="250" title="Iris-virginica">
--Iris-virginica
+<img src="https://github.com/Kevin002023/pands-project/blob/main/images/iris-image.png" width="250" height="250">
+- The image above shows the 3 classes of iris in this data set.
 
 
 It is a multivariate dataset containing information on 150 specimens of iris. There are 5 attributes recorded for each specimen. [These are as follows](https://archive.ics.uci.edu/ml/datasets/iris) :
@@ -40,18 +39,18 @@ It is a multivariate dataset containing information on 150 specimens of iris. Th
 
 Fischer used this information to identify a method of distinguishing between the classes of iris's. It has since been used as a benchmark dataset for machine learning algorithms.
 
-## **Project Outline**
+## **Project Outline** {Head2}
 
 The purpose of the project was to research the Iris dataset, import it to python and write a program called 'analysis.py' that would be used to analyse the dataset. We were to produce plots of this analysis and output the results of any commands to a text file called 'project.txt'.
 
 The purpose of the analysis done by Fisher on this dataset was to see if he could distinguish the class of iris based on the metrics it contains or a combination thereof.  I would like to try and replicate this. 
 
-In order to achieve this, a univariate analysis was carried out, where a singular variable was looked at. This was done by producing plots to show the distribution and variance for Sepal and petal lengths and widths. The [Pandas documnetation](https://pandas.pydata.org/pandas-docs/version/0.13.1/visualization.html#targeting-different-subplots) was a great source of information on generating plots.
+In order to achieve this, a univariate analysis was carried out, where a singular variable was looked at. This was done by producing plots to show the distribution and variance for sepal and petal lengths and widths. The [Pandas documentation](https://pandas.pydata.org/pandas-docs/version/0.13.1/visualization.html#targeting-different-subplots) was a great source of information on generating plots.
 
-After this a multivariate analysis was performed, where the relationship between certain variables was looked at.
+After this a multivariate analysis was performed, where the relationship between certain variables was looked at. This was done using scatter-plots and a pair-plot. 
 
 
-## **Software Used**
+## **Software Used** {Head3}
 
 This project was done using python on Visual Studio Code. It was used to produce both the code and this README.md file.
 
@@ -69,14 +68,14 @@ import seaborn as sns
 
 Pandas allows you to manipulate the dataset as a dataframe. It was used to import the dataset, set up a dataframe, validate the values and then for aggregation and grouping of specific variables. I made extensive use of the Pandas documentation which can be found [here](https://pandas.pydata.org/pandas-docs/stable/getting_started/index.html)
 
-NumPy was used for mathematical operations adn when working with arrays/matrices. Its documentation can be found [here](https://numpy.org/doc/stable/)
+NumPy was used for mathematical operations and when working with arrays/matrices. Its documentation can be found [here](https://numpy.org/doc/stable/)
 
 Matplotlib is an extension of NumPy and was used to present the data in plots. Its documentation is [here](https://matplotlib.org/stable/index.html)
 
 Seaborn was also used in the visualization of the data. It has some extended functionality on Matplotlib when making plots. Seaborn documentation is [here](https://seaborn.pydata.org/)
 
 
-## **Analysis**
+## **Analysis** {Head4}
 
 The dataset was imported using the url and the pandas read_csv() function.  This was done so the code would work even with the dataset unattached to the repository. The dataset is called 'data' in my code hereafter. 
 
@@ -142,13 +141,13 @@ max        7.900000     4.400000      6.900000     2.500000
 The above commands were all added to 'project.txt' using the write() command. However, this command expects any input to be a string, whereas the head(), tail(), info() and describe() functions all generate dataframes. To counteract this they were converted to strings in the write command.  
 
 
-### Univariate Analysis
+### Univariate Analysis {Head4.1}
 
 Univariate Analysis where only one variable is looked at, at a time. This was done for Sepal Length, Sepal Width, Petal Length and Petal Width.
 
 **Histogram**
 
-A Histogram is a visual representation of the distribution of values. The range of values are grouped into a series of intervals called 'bins' and the frequency of each value inside these bins is then plotted on the graph. The number of bins can greatly impact the effectiveness of the histogram. If we have too few, there will be a lack of detail making it difficult to identify any pattern, too many and the distribution will look rough and there will be too much "noise". ["Sturges Rule"](https://www.statology.org/sturges-rule/) is a method of identifying the optimal number of bins to use. 
+A Histogram is a visual representation of the distribution of values. The range of values are grouped into a series of intervals called 'bins' and the frequency of each value inside these bins is then plotted on the graph. The number of bins can greatly impact the effectiveness of the histogram. If we have too few, there will be a lack of detail making it difficult to identify any pattern, too many and the distribution will look rough and there will be too much "noise". There are multiple different ways of calculating the correct number of bins. In this case ["Sturges Rule"](https://www.statology.org/sturges-rule/) was used. 
 
 ``
 Optimal Bins = ⌈log2n + 1⌉
@@ -165,13 +164,13 @@ By creating an array called ``axs``, each variable could have its own subplot on
 
 A ['normal distribution'](https://www.techtarget.com/whatis/definition/normal-distribution#:~:text=What%20is%20normal%20distribution%3F,the%20mean%20of%20the%20distribution.) of values will have a bell curve. 
 
--Sepal length: Has a unimodal distribution (ie, a singular peak). While it isn't strictly symmetrical, it can be considered normal distribution with a slight skew to the right.
+- Sepal length: Has a unimodal distribution (ie, a singular peak). While it isn't strictly symmetrical, it can be considered normal distribution with a slight skew to the right.
 
--Sepal Width: This also has a unimodal distribution and the classical bell shape you would expect from a normal distribution.
+- Sepal Width: This also has a unimodal distribution and the classical bell shape you would expect from a normal distribution.
 
--Petal Length: This has a bimodal (two peaks) distribution and skews towards the right.
+- Petal Length: This has a bimodal (two peaks) distribution and skews towards the right.
 
--Petal Width: Again this has a bimodal distribution and skews to the right. 
+- Petal Width: Again this has a bimodal distribution and skews to the right. 
 
 Histograms were also produced for each variable separated by class. 
 
@@ -181,12 +180,12 @@ A [boxplot](https://pandas.pydata.org/pandas-docs/version/0.25.3/reference/api/p
 
 Again for ease of comparison each variant was a subplot allowing all 4 on the same image. 
 
-![Boxplot](images\Boxplots.png)
+![Boxplot](https://github.com/Kevin002023/pands-project/blob/main/images/Boxplots.png)
 
-For both sepal length and width there is much overlap in the range of values for all 3 classes. It would be very difficult to identity what class an iris belonged to based on either of these two variables. However,; it is immediately noticeable that this is not the case when comparing Petal length and width. While there is an overlap in the values for Iris-versicolor and Iris-virginica, the size of the petals for Iris-setosa are significantly smaller. In addition, Iris-setosa has a much narrower range of values. 
+For both sepal length and width there is much overlap in the range of values for all 3 classes. It would be very difficult to identity what class an iris belonged to based on either of these two variables. However, it is immediately noticeable that this is not the case when comparing Petal length and width. While there is an overlap in the values for Iris-versicolor and Iris-virginica, the size of the petals for Iris-setosa are significantly smaller. In addition, Iris-setosa has a much narrower range of values. 
 
 
-## Mutlivariate Analysis
+## Multivariate Analysis {Head4.2}
 
 Multivariate analysis is where 2 or more variable are examined at once to try and identify a relationship between them. 
 
@@ -206,37 +205,89 @@ Here, it can be seen again a division between Iris-Setosa and the other two clas
 
 ## Pair Plots
 
-A [pair-plot](https://datagy.io/seaborn-pairplot/) is another method of looking at the relationship of two variables. They compare each variable to every other variable. 
+A [pair-plot](https://datagy.io/seaborn-pairplot/) is another method of looking at the relationship of two variables. They compare each variable to every other variable.
 
-!["PairPlot"]()
+![PairPlot](https://github.com/Kevin002023/pands-project/blob/main/images/Pairplot.png)
 
-## Technical Information
+The diagonal line shows the distribution of values in each variable by using a histogram. The other plots all represent one variable plotted with another.  Each point is also coloured based on its classification. 
+
+Using the above scatter-plots and pair plot, we can see that there is a positive linear relationship between petal length and petal width. There is a roughly straight line with a positive slope indicating a positive linear relationship. If there was a straight line with a negative slope it would indicate a negative linear relationship. 
+
+The other variables do not seem to have any linear relationship between each other. It is notable that Iris-setosa shares little overlap between the other two classes. 
+
+## **Conclusion** {Head5}
+
+I can already conclude that it seems that there is no relationship between the sepal length and sepal width and probably petal length and width have the strongest linear relationship.
+
+## **Technical Information** {Head5}
 
 Language
 Python 3.09.13
 
+Modules Used
+- Pandas
+- Matplotlib
+- NumPy
+- Seaborn
 
+Editor
+Visual Studio Code V 1.75.1
 As there will be multiple graphs, I wanted to save them all to same folder "graphs". I did this by using the relative path within the 'fig.savefig' (command)[https://stackoverflow.com/questions/66583370/matplotlib-plot-image-save-path-python-vs-code]
 
-Boxplots
-https://pythonbasics.org/seaborn-boxplot/
-https://proclusacademy.com/blog/quicktip/boxplot-separate-yaxis/
 
-Making the labels bold = https://www.includehelp.com/python/bold-text-label-in-plot.aspx#:~:text=The%20command%20fontweight%3D'bold,or%20label%20in%20figure%20bold.
+## **References** {Head6}
 
 
-Multivariate analysis = looks at a number for different variables and the relationship between them.
-- scatter pltos
+- “Pandas documentation — pandas 2.0.1 documentation,” Pydata.org. [Online]. Available: https://pandas.pydata.org/pandas-docs/stable/index.html. 
 
-ScatterPlot
+- “NumPy documentation — NumPy v1.24 manual,” Numpy.org. [Online]. Available: https://numpy.org/doc/stable/.
 
-I wanted to create a scatterplot of "Sepal Length" vs "Sepal Width", distinguishing the classes by colour and then to the same for "Petal Length vs Petal Width". I founds this (website)[https://datagy.io/pandas-scatter-plot/] a great resourse for this. 
+- “Matplotlib documentation — Matplotlib 3.7.1 documentation,” Matplotlib.org. [Online]. Available: https://matplotlib.org/stable/index.html. 
 
-In order to distinguish the Class by colour I created 3 different Dataframes, one for each class, assigned them a unique colour and then plotted them on the same scatterplot graph. 
+- “Seaborn: Statistical data visualization — seaborn 0.12.2 documentation,” Pydata.org. [Online]. Available: https://seaborn.pydata.org/. 
 
+- Sauravdeb, “Introduction to Machine learning: Iris dataset,” Medium, 02-Oct-2021. [Online]. Available: https://medium.com/@sauravdeb98/introduction-to-machine-learning-iris-dataset-58f2f30f966e. 
 
-###Results
+- “Statistical analysis on IRIS dataset,” Kaggle.com, 22-May-2022. [Online]. Available: https://www.kaggle.com/code/neha99/statistical-analysis-on-iris-dataset. 
 
-The 
+- “Iris-data-analysis.knit,” Amazonaws.com. [Online]. Available: https://rstudio-pubs-static.s3.amazonaws.com/848706_1fdca2c961d54f1e9909fe64e127095a.html.
 
-I can already conclude that it seems that there is no relationship between the sepal length and sepal width and probably petal length and width have the strongest linear relationship.
+- “Extended syntax,” Markdownguide.org. [Online]. Available: https://www.markdownguide.org/extended-syntax/.
+
+- “User guide and tutorial — seaborn 0.12.2 documentation,” Pydata.org. [Online]. Available: https://seaborn.pydata.org/tutorial.html. 
+
+- “Matplotlib tutorial,” W3schools.com. [Online]. Available: https://www.w3schools.com/python/matplotlib_intro.asp.
+
+- Nik, “Creating Pair Plots in Seaborn with sns pairplot,” datagy, 11-Jul-2022. [Online]. Available: https://datagy.io/seaborn-pairplot/. 
+
+- “How to add header row to a Pandas Dataframe?,” GeeksforGeeks, 25-Dec-2020. [Online]. Available: https://www.geeksforgeeks.org/how-to-add-header-row-to-a-pandas-dataframe/. 
+
+- “Plotting with matplotlib — pandas 0.13.1 documentation,” Pydata.org. [Online]. Available: https://pandas.pydata.org/pandas-docs/version/0.13.1/visualization.html.
+
+- “How to plot multiple dataframes in subplots,” Stack Overflow. [Online]. Available: https://stackoverflow.com/questions/22483588/how-to-plot-multiple-dataframes-in-subplots.
+
+- M. Pradhan, “Exploratory Data Analysis on Iris Dataset,” Tutorialspoint.com. [Online]. Available: https://www.tutorialspoint.com/exploratory-data-analysis-on-iris-dataset. 
+
+- “Matplotlib plot image save path python VS Code,” Stack Overflow. [Online]. Available: https://stackoverflow.com/questions/66583370/matplotlib-plot-image-save-path-python-vs-code. 
+
+- “Seaborn boxplot,” Pythonbasics.org. [Online]. Available: https://pythonbasics.org/seaborn-boxplot/.
+
+- Y. Singh, “Boxplot with separate Y-axis for each column,” Proclus Academy. [Online]. Available: https://proclusacademy.com/blog/quicktip/boxplot-separate-yaxis/. 
+
+- “Bold Text Label in Python Plot,” Includehelp.com. [Online]. Available: https://www.includehelp.com/python/bold-text-label-in-plot.aspx. 
+
+- [Online]. Available: http://ttps://datagy.io/pandas-scatter-plot/. 
+
+- Zach, “What is Sturges’ Rule? (definition & example),” Statology, 11-Jan-2021. [Online]. Available: https://www.statology.org/sturges-rule/.
+
+- Zach, “Seaborn: How to Use hue Parameter in Pairplot,” Statology, 16-Feb-2023. [Online]. Available: https://www.statology.org/seaborn-pairplot-hue/. 
+
+- D. S. W. Shen, “Linear Regression using Iris dataset — ‘hello, world!’ of machine learning,” Analytics Vidhya, 10-Mar-2020. [Online]. Available: https://medium.com/analytics-vidhya/linear-regression-using-iris-dataset-hello-world-of-machine-learning-b0feecac9cc1. 
+
+- “Reading and Writing to text files in Python,” GeeksforGeeks, 03-Apr-2017. [Online]. Available: https://www.geeksforgeeks.org/reading-writing-text-files-python/. 
+
+- Y. Singh, “How to read and write excel files using Pandas,” Proclus Academy. [Online]. Available: https://proclusacademy.com/blog/practical/pandas-read-write-excel-files/. 
+
+- N. Mukherjee, “First step to Statistics (with Iris data) - Analytics Vidhya - Medium,” Analytics Vidhya, 01-Jun-2020. [Online]. Available: https://medium.com/analytics-vidhya/first-step-to-statistics-with-iris-data-3d29c0820c5d. 
+
+- Nik, “Pandas Scatter Plot: How to make a Scatter Plot in Pandas,” datagy, 04-Mar-2022. [Online]. Available: https://datagy.io/pandas-scatter-plot/. 

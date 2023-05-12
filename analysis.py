@@ -172,6 +172,8 @@ plt.show()
 
 # Pairplots comparing each variable to all others. 
 
-sns.pairplot(data, hue ='Class')
+pair = sns.pairplot(data, hue ='Class')
+pair.map_diag(sns.histplot)
+pair.map_offdiag(sns.scatterplot)
 plt.savefig('images/Pairplot.png')
 plt.show
