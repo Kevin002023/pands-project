@@ -216,10 +216,13 @@ The other variables do not seem to have any linear relationship between each oth
 
 ## **Conclusion**
 
+This data-set is often used as a test case for machine learning and data-analysis algorithims. However; when using it to draw conclusions about the morphology of Iris plants, it is important to remember that it is a very small sample size. Having only 150 samples, it is not sufficient to draw biological conclusions. These would typically require a much broader dataset. It does however, indicate relationships between the 3 classes of iris and indeed between some of the variables themselves. 
+
+The first thing to notice when looking at the above analysises, is that there is a much greater overlap between Iris-versicolor and Iris-virginica than that of Iris-setosa. Iris-setosa is further apart from the other two classes in all variablesbut particularly regarding the petals. This may indicate an older evolutionary divergence. This, is of course outside the scope of this project and would require a much greater examiniation of the iris plant. 
+
 I can already conclude that it seems that there is no relationship between the sepal length and sepal width and probably petal length and width have the strongest linear relationship.
 
-
-
+From looking at the [boxplot]() it is clear that the Iris-setosa has shorter and narrower petals than the other two classes. This is confirmed when looking at the distribution of values in the class specific histograms. 
 ## **References**
 
 
