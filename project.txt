@@ -48,3 +48,18 @@ min        4.300000     2.000000      1.000000     0.100000
 75%        6.400000     3.300000      5.100000     1.800000
 max        7.900000     4.400000      6.900000     2.500000
 
+The average Sepal length of the Setosa iris is  5.006cm
+The average Sepal width of the Setosa iris is 3.418cm
+The average Petal length of the Setosa iris is 0.244cm
+The average Petal width of the Setosa iris is 0.244cm
+
+The average Sepal length of the Versicolor iris is  5.936cm
+The average Sepal width of the Versicolor iris is 2.77cm
+The average Petal length of the Versicolor iris is 4.26cm
+The average Petal width of the Versicolor iris is 1.326cm
+
+The average Sepal length of the Virginica iris is  6.588cm
+The average Sepal width of the Virginica iris is 2.974cm
+The average Petal length of the Virginica iris is 5.552cm
+The average Petal width of the Virginica iris is 5.552cm
+

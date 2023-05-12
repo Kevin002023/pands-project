@@ -8,6 +8,8 @@ import pandas as pd # pandas will be used to manipulate the data
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+import statistics as stat
+
 
 
 data_url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
@@ -77,8 +79,9 @@ axs[0, 1].hist(set_sw, bins=9, edgecolor ='black')
 axs[1, 0].hist(set_pl, bins=9, edgecolor ='black')
 axs[1, 1].hist(set_pw, bins=9, edgecolor ='black')
 figure.suptitle('Setosa Histogram', weight='bold')
-plt.savefig('images/Setosa_hist.png')
+plt.savefig('images/Class Specific Histograms/Setosa_hist.png')
 plt.show()
+
 
 #Versicolor Histogram
 
@@ -100,7 +103,7 @@ axs[0, 1].hist(ver_sw, bins=7, edgecolor ='black')
 axs[1, 0].hist(ver_pl, bins=7, edgecolor ='black')
 axs[1, 1].hist(ver_pw, bins=7, edgecolor ='black')
 figure.suptitle('Versicolor Histogram', weight='bold')
-plt.savefig('images/Versicolor_hist.png')
+plt.savefig('images/Class Specific Histograms/Versicolor_hist.png')
 plt.show()
 
 #Virginica Histogram
@@ -122,8 +125,41 @@ axs[0, 1].hist(vg_sw, bins=7, edgecolor ='black')
 axs[1, 0].hist(vg_pl, bins=7, edgecolor ='black')
 axs[1, 1].hist(vg_pw, bins=7, edgecolor ='black')
 figure.suptitle('Virginica Histogram', weight='bold')
-plt.savefig('images/Virginica_hist.png')
+plt.savefig('images/Class Specific Histograms/Virginica_hist.png')
 plt.show()
+
+#Printing averages to txt.file
+
+set_s_l_avg = (stat.mean(set_sl))   #setosa sep length average
+set_s_w_avg = (stat.mean(set_sw))   #setosa sep width average
+set_p_l_avg = (stat.mean(set_pl))   #setosa pet length average
+set_p_l_avg = (stat.mean(set_pw))    #setosa pet width average
+
+ver_s_l_avg = (stat.mean(ver_sl))   #versicolor sep length average
+ver_s_w_avg = (stat.mean(ver_sw))   #versicolor sep width average
+ver_p_l_avg = (stat.mean(ver_pl))   #versicolor pet length average
+ver_p_w_avg = (stat.mean(ver_pw))   #versicolor pet width average
+
+virg_s_l_avg = (stat.mean(vg_sl))   #virginica sep length average
+virg_s_w_avg = (stat.mean(vg_sw))   #virginica sep width average
+virg_p_l_avg = (stat.mean(vg_pl))   #virginica pet length average
+virg_p_w_avg = (stat.mean(vg_pw))    #virginica pet width average
+
+
+with open('project.txt', 'a') as f:  
+    f.write(f'The average Sepal length of the Setosa iris is  {set_s_l_avg}cm\n')
+    f.write(f'The average Sepal width of the Setosa iris is {set_s_w_avg}cm\n')
+    f.write(f'The average Petal length of the Setosa iris is {set_p_l_avg}cm\n')
+    f.write(f'The average Petal width of the Setosa iris is {set_p_l_avg}cm\n\n')
+    f.write(f'The average Sepal length of the Versicolor iris is  {ver_s_l_avg}cm\n')
+    f.write(f'The average Sepal width of the Versicolor iris is {ver_s_w_avg}cm\n')
+    f.write(f'The average Petal length of the Versicolor iris is {ver_p_l_avg}cm\n')
+    f.write(f'The average Petal width of the Versicolor iris is {ver_p_w_avg}cm\n\n')
+    f.write(f'The average Sepal length of the Virginica iris is  {virg_s_l_avg}cm\n')
+    f.write(f'The average Sepal width of the Virginica iris is {virg_s_w_avg}cm\n')
+    f.write(f'The average Petal length of the Virginica iris is {virg_p_l_avg}cm\n')
+    f.write(f'The average Petal width of the Virginica iris is {virg_p_l_avg}cm\n\n')
+
 
 #Boxplots
 

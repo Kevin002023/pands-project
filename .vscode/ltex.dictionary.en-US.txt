@@ -1,3 +1,10 @@
 Iris-virginica
 Iris-versicolor
 Iris-setosa
+Virginica
+Versicolor
+Virignica
+Iris-Virginica
+Iris-Virginica
+Iris-Setosa
+Iris-Versicolor
