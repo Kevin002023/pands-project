@@ -3,14 +3,13 @@
 ## **Table of Contents**
 
 1. [Introduction to Dataset](#introduction-to-dataset)
-2. [Project Outline](Head2)
-3. [Software Used](Head3)
-4. [Analysis](Head4)
-    1. [Univariate](Head4.1)
-    2. [Multivariate](Head4.2)
-5. [Results](Head5)
-6. [Technical Information](Head6)
-7. [Conclusion](Head7)
+2. [Project Outline](#project-outline)
+3. [Software Used](#software-used)
+4. [Analysis](#analysis)
+    1. [Univariate](#univariate)
+    2. [Multivariate](#multivariate)
+5. [Conclusion](#conclusion)
+6. [References](#references\)
 
 
 
@@ -39,7 +38,7 @@ It is a multivariate dataset containing information on 150 specimens of iris. Th
 
 Fischer used this information to identify a method of distinguishing between the classes of iris's. It has since been used as a benchmark dataset for machine learning algorithms.
 
-## **Project Outline**{#Head2}
+## **Project Outline**
 
 The purpose of the project was to research the Iris dataset, import it to python and write a program called 'analysis.py' that would be used to analyse the dataset. We were to produce plots of this analysis and output the results of any commands to a text file called 'project.txt'.
 
@@ -50,9 +49,9 @@ In order to achieve this, a univariate analysis was carried out, where a singula
 After this a multivariate analysis was performed, where the relationship between certain variables was looked at. This was done using scatter-plots and a pair-plot. 
 
 
-## **Software Used**{#Head3}
+## **Software Used**
 
-This project was done using python on Visual Studio Code. It was used to produce both the code and this README.md file.
+This project was done using Python 3.09.13, on the editor Visual Studio Code V 1.75.1. It was used to produce both the code and this README.md file.
 
 The dataset is available from the machine learning repository of UCI(http://archive.ics.uci.edu/ml/datasets/Iris). 
 
@@ -75,7 +74,7 @@ Matplotlib is an extension of NumPy and was used to present the data in plots. I
 Seaborn was also used in the visualization of the data. It has some extended functionality on Matplotlib when making plots. Seaborn documentation is [here](https://seaborn.pydata.org/)
 
 
-## **Analysis**{#Head4}
+## **Analysis**
 
 The dataset was imported using the url and the pandas read_csv() function.  This was done so the code would work even with the dataset unattached to the repository. The dataset is called 'data' in my code hereafter. 
 
@@ -141,7 +140,7 @@ max        7.900000     4.400000      6.900000     2.500000
 The above commands were all added to 'project.txt' using the write() command. However, this command expects any input to be a string, whereas the head(), tail(), info() and describe() functions all generate dataframes. To counteract this they were converted to strings in the write command.  
 
 
-### Univariate Analysis{#Head4.1}
+### Univariate Analysis
 
 Univariate Analysis where only one variable is looked at, at a time. This was done for Sepal Length, Sepal Width, Petal Length and Petal Width.
 
@@ -185,7 +184,7 @@ Again for ease of comparison each variant was a subplot allowing all 4 on the sa
 For both sepal length and width there is much overlap in the range of values for all 3 classes. It would be very difficult to identity what class an iris belonged to based on either of these two variables. However, it is immediately noticeable that this is not the case when comparing Petal length and width. While there is an overlap in the values for Iris-versicolor and Iris-virginica, the size of the petals for Iris-setosa are significantly smaller. In addition, Iris-setosa has a much narrower range of values. 
 
 
-## Multivariate Analysis{#Head4.2}
+## Multivariate Analysis
 
 Multivariate analysis is where 2 or more variable are examined at once to try and identify a relationship between them. 
 
@@ -215,26 +214,13 @@ Using the above scatter-plots and pair plot, we can see that there is a positive
 
 The other variables do not seem to have any linear relationship between each other. It is notable that Iris-setosa shares little overlap between the other two classes. 
 
-## **Conclusion**{#Head5}
+## **Conclusion**
 
 I can already conclude that it seems that there is no relationship between the sepal length and sepal width and probably petal length and width have the strongest linear relationship.
 
-## **Technical Information**{#Head6}
-
-Language
-Python 3.09.13
-
-Modules Used
-- Pandas
-- Matplotlib
-- NumPy
-- Seaborn
-
-Editor
-Visual Studio Code V 1.75.1
 
 
-## **References**{#Head7}
+## **References**
 
 
 - “Pandas documentation — pandas 2.0.1 documentation,” Pydata.org. [Online]. Available: https://pandas.pydata.org/pandas-docs/stable/index.html. 
